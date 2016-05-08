@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// toast.scss
+//-----------------------------------------------------
+
+.toast-wrap{
+    @include fixed($barHeight);
+    bottom: 0;
+    @include center-flex(both);
+    z-index: $zIndexOverlay;
+    display: none;
+    flex-direction: column;
+    &.active{
+        display: flex;
+    }
+}
+.toast{
+    background: $colorOverlay;
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: $zIndexOverlay + 5;
+    border-radius: 5px;
+    position: relative;
+    // display: none;
+
+    .toast-icon{
+        display: inline-block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+}
+.toast--loading{
+    border-radius: 10px;
+
+    .icon-loading {
+        fill: #fff;
+        width: 28px;
+        height: 28px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    // 带关闭按钮loading
+    &.has-close {
+        padding: 15px;
+        width: 100px;
+        .icon-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 20px;
+        }
+        .toast-text {
+            margin-top: 10px;
+        }
+    }
+}

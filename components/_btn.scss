@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// btn.scss
+//---------------------------------------------------
+
+
+// 默认的按钮大小，颜色
+//----------------------------------------------------- 
+$btnSize:                         (s: 30px, m: $barHeight) !default; // 默认按钮的左右padding，高度
+$btnColor:                        #333 #e6e6e6 !default; // 默认按钮的textColor, bgColor
+
+
+// style
+//---------------------------------------------------
+.btn {
+    @extend %btn-basic;
+    @include btn-size;
+    @include btn-color(#333, $colorF, rgba(0,0,0,.2));
+    // @include btn-color($borderColor: $colorBorder);
+}
+.btn-outline {
+    @extend %btn-basic;
+    @include btn-size();
+    @include btn-color($primary, #fff, $primary #147de2);
+}
+.btn-primary {
+    @extend %btn-basic;
+    @include btn-size();
+    @include btn-color(#fff, $primary);
+}
+
+.btn-stress {
+    @extend %btn-basic;
+    @include btn-size();
+    @include btn-color(#fff, $orange);
+}
+.full-width[class^="btn"] {
+    border-radius: 0;
+}
+.disabled[class^="btn"] {
+    background-color: map-get($colorDisabled, bg) !important;
+    color: #fff !important;
+    cursor: default !important;
+    pointer-events: none;   
+}
+
+// 规格 大小
+
+.btn-s {
+    line-height: map-get($btnSize, s) - 2px;
+    font-size: 12px;
+}
+.btn-m {
+    line-height: map-get($btnSize, m) - 2px;
+}
+
+// actions 用于alert/modal的执行按钮等
+.actions {
+    @include equal-table(actions-btn);
+    .actions-btn {
+        color: $blue;
+        // background-color: #fff;
+        height: $barHeight;
+        line-height: $barHeight;
+        text-align: center;
+        border-top: 1px solid $colorBorder;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        box-sizing: border-box;
+        &:first-child {
+            border-left: none;
+        }
+        &:active {
+            background: darken(#fff, 10%);
+        }
+    }
+}
+
+.actions--full {
+    display: block;
+    .actions-btn {
+        display: block;
+        width: 100%;
+        border-left: none;
+    }
+}

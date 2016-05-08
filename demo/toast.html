@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta content="yes" name="apple-mobile-web-app-capable"/>
+ 	<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection" content="telphone=no"/>
+	<link rel="stylesheet" href="css/global.css">
+	<title>toast</title>
+    <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <style type="text/css">
+        .toast{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
+    <h1 class="page-tt">toast</h1>
+</header>
+<main id="pages" class="page-wrap">
+    <div class="page">
+        <article class="article">
+            <span class="btn-default js-toast-btn">toast 1</span>
+            <span class="btn-default">toast 2</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis nulla, ea ex quas ut pariatur totam hic ducimus nostrum, repudiandae. Id ea asperiores commodi sapiente perspiciatis, obcaecati sint natus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo minima corporis nesciunt similique eum tenetur, a error odit dicta! Quos atque odit quibusdam in deserunt sed temporibus officiis vel sit.</p>
+            <p>Sit rem reiciendis, nobis, id consequatur saepe quam excepturi non commodi cum omnis velit iusto et dolores totam consequuntur, nisi quisquam cumque maiores tempora labore incidunt? Ex odit sapiente nam!</p>
+            <p>Nesciunt quibusdam, vitae perferendis veritatis iste eos explicabo perspiciatis molestias quaerat ipsum nobis id neque quas, similique minima architecto illo voluptates, ipsam reiciendis vero magni odio sit. Animi, voluptates, nesciunt!</p>
+            <p>Possimus ad fuga perspiciatis officia nobis distinctio facere suscipit quia, id. Officia dolorem deserunt ex commodi, non quaerat et aliquid eaque, facere reiciendis, a numquam maxime! In officiis eveniet omnis?</p>
+            <p>Laudantium magnam molestias saepe velit odit dolore, soluta reprehenderit placeat. Natus omnis debitis aperiam ea sit nostrum aut culpa veniam, repudiandae sint officia et adipisci sed laborum tempora ad. Non.</p>
+        </article>
+    </div>
+</main>
+
+<section class="toast-wrap active">
+    <div class="toast">
+        <p class="toast-txt">网络连接超时，请稍后重试</p>
+    </div>
+    <div class="toast">
+        <i class="toast-icon icon-right"></i>
+        <p class="toast-txt">干得漂亮</p>
+    </div>
+    <div class="toast toast--loading">
+        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
+    </div>
+    <div class="toast toast--loading has-close">
+        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
+        <i class="icon-close">&times;</i>
+    </div>
+    <div class="toast toast--loading has-close">
+        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
+        <p class="toast-text">提交中...</p>
+        <i class="icon-close">&times;</i>
+    </div>
+</section>
+</body>
+</html>

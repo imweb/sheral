@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// header.scss
+//---------------------------------------------------
+
+$headerHeight:        $barHeight !default;
+$headerBgColor:       $primary !default;
+$headerTextColor:     #fff !default;
+
+.header {
+    width: 100%;
+    line-height: $headerHeight;
+    text-align: center;
+    background-color: $headerBgColor;
+    color: $headerTextColor;
+
+    .header-left{
+        float: left;
+        height: $headerHeight;
+    }
+    .header-right{
+        float: right;
+        height: $headerHeight;
+    }
+    .header-icon,
+    .header-btn{
+        cursor: pointer;
+        &:hover {
+            background-color: darken($headerBgColor, 10%);
+        }
+    }
+    .header-icon {
+        width: $headerHeight;
+        height: $headerHeight;
+        float: left;
+        text-align: center;
+    }
+    .header-btn {
+        padding: 0 10px;
+        float: left;
+        line-height: $headerHeight;
+    }
+    .header-mix{
+        float: left;
+        padding-left: 20px;
+        padding-right: 10px;
+        .mix-txt{
+            margin-left: 10px;
+        }
+    }
+    .icon-svg{
+        fill: $headerTextColor;
+    }
+
+    .page-tt,
+    .page-mutil-tt,
+    .page-select-tt{
+        position: absolute;
+        left: $headerHeight * 2;
+        right: $headerHeight * 2;
+    }
+    .page-tt {
+        line-height: $headerHeight;
+        @extend %ellipsis;
+        
+        .tt-l {
+            line-height: 28px;
+            display: block;
+        }
+        .tt-s {
+            line-height: 1;
+            font-size: 12px;
+            display: block;
+        }
+    }
+    .page-mutil-tt {
+        font-size: 14px;
+        line-height: 19px;
+        padding-top: 4px;
+        box-sizing: border-box;
+        overflow : hidden;    
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        height: $headerHeight;
+    }
+    .page-tabs-tt {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0,0,0,.2);
+        border-radius: 5px;
+        line-height: 30px;
+        padding: 1px;
+        font-size: 14px;
+        .tt-option {
+            float: left;
+            padding: 0 15px;
+            color: #fff;
+            &.active {
+                background-color: #fff;
+                @if lightness($headerBgColor) > 40% {
+                    color: $headerBgColor;
+                }
+                @else {
+                    color: $headerTextColor;
+                }
+            }
+            &:first-child{
+                border-radius: 5px 0 0 5px;
+            }
+            &:last-child {
+                border-radius: 0 5px 5px 0;
+            }
+        }
+    }
+}
+
+.header--white{
+    background: #fff;
+    color: $primary;
+    
+    .header-icon,
+    .header-btn{
+        &:hover {
+            background-color:transparent;
+        }
+    }
+    .icon-svg{
+        fill: $primary;
+    }
+}

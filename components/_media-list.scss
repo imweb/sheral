@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// media list
+//-----------------------------------------------------
+
+$mediaImgSize:       60px 60px !default;
+$mediaFlex:          false !default;
+$mediaRightWidth:    60px !default;
+
+.media-list{
+	background: #fff;
+	@extend %border-tb;
+
+	.media-item{
+		width: 100%;
+		padding: 10px;
+		position: relative;
+		display: block;
+		@if $mediaFlex{
+			display: flex;
+			// align-items: center;
+		}
+		@if not $mediaFlex{
+			padding-left: 20px + nth($mediaImgSize, 1);
+		}
+		&::before{
+			content: "";
+			@include retina-one-px-border(bottom);
+			left: 10px;
+		}
+		&:last-child{
+			&::before{
+				display: none;
+			}
+		}
+		&:active{
+			background: $colorF;
+		}
+
+		.item-img{
+			@if not $mediaFlex{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+			@if $mediaFlex{
+				margin-right: 10px;
+			}
+			width: nth($mediaImgSize, 1);
+			height: nth($mediaImgSize, 2);
+		}
+		.item-bd{
+			@if $mediaFlex{
+				flex: 1;
+				width: 1%;
+			} @else {
+				min-height: nth($mediaImgSize, 2);
+			}
+			.bd-tt{
+				font-weight: normal;
+				@extend %ellipsis;
+				// font-size: 16px;
+			}
+			.bd-txt{
+				font-size: 12px;
+			}
+		}
+		
+	}
+}
+.media-list--after-v{
+	.media-item{
+		padding-right: 30px;
+		@extend %item-v-right;
+	}
+}
+.media-list--icon-v{
+	.media-item{
+		@if not $mediaFlex {
+			padding-right: 30px;
+		}
+		@if $mediaFlex {
+			padding-right: 0;
+		}
+		.icon-v-right{
+			width: 30px;
+			height: 30px;
+			color: #ccc;
+			@if not $mediaFlex {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+			}
+		}
+		
+	}
+}
+
+.media-list--right{
+	.media-item{
+		padding-right: $mediaRightWidth + 10px;
+		
+
+		.item-right{
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			@if $mediaFlex {
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.media-list--middle{
+	
+	.media-item{
+		@if $mediaFlex{
+			align-items: center;
+		}
+		.item-bd{
+			@if $mediaFlex{
+				// min-height: auto;
+			} @else {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+	}
+}

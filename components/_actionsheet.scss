@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// actionsheet.scss
+//---------------------------------------------------
+
+.actionsheet {
+    background: $colorF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: $zIndexOverlay + 5;
+    .line-list{
+        border-radius: $radiusBase;
+    }
+}

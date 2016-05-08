@@ -1,0 +1,124 @@
+﻿@charset "UTF-8";
+
+//-----------------------------------------------------
+// line-list.scss
+//-----------------------------------------------------
+
+.line-item {
+    @extend %bar-line;
+    .item-tt {
+        line-height: 1.3;
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    .item-txt {
+        line-height: 1.5;
+        color: #999;
+        font-size: 12px;
+    }
+}
+.line-list {
+    background: #fff;
+    + .line-list {
+        margin-top: 10px;
+    }
+}
+.line-list--h-border {
+    position: relative;
+    &::before {
+        content: "";
+        @include retina-one-px-border(top);
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        @include retina-one-px-border(bottom);
+    }
+}
+
+.line-list--center {
+    text-align: center;
+}
+.line-list--indent {
+    .line-item::before {
+        left: 10px;
+    }
+}
+.line-list--select {
+    .line-item {
+        padding-right: 30px;
+        &.active {
+            color: $primary;
+            &::after {
+                content: "";
+                display: block;
+                width: 14px;
+                height: 8px;
+                border-bottom: 2px solid currentColor;
+                border-left: 2px solid currentColor;
+                transform: rotate(-52deg) translate(0, -50%);
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                margin-top: -4px;
+            }
+        }
+    }
+}
+.line-list--multi-select {
+    .active{
+        color: $primary;
+    }
+}
+.line-list--after-v {
+    .line-item {
+        padding-right: 30px;
+        @extend %item-v-right;        
+    }
+}
+.line-list--icon-v {
+    .line-item {
+        padding-right: 25px;        
+    }
+    .icon-v-right {
+        position: absolute;
+        width: 30px;
+        height: 100%;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        color: #ccc;
+    }
+}
+.line-list--flex {
+    .line-item {
+        display: flex;
+        align-items: center;
+        padding-right: 0;
+        .item-icon,
+        .icon-switch,
+        .remind-num,
+        .item-append{
+            margin-right: 10px;
+        }
+        .item-bd {
+            flex: 1;
+            margin-right: 10px;
+            width: 1%;
+        }
+        .item-append{
+            color: $color9;
+        }
+        .icon-v-right {
+            width: 30px;
+            height: 30px;
+            color: $colorC;
+            margin-left: -10px;
+        }
+        .remind-num {
+            position: static;
+            line-height: 1.5;
+        }
+    }
+}

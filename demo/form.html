@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="css/global.css">
+	<title>form</title>
+    <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
+    <h1 class="page-tt">form</h1>
+</header>
+<main id="pages" class="page-wrap">
+    <div class="page">
+        <div class="content">
+            <h2 class="guide-title">form表单填写</h2>
+            <form class="form">
+                
+                <div class="form-item">
+                    <label class="item-label">用户名</label>
+                    <div class="item-field">
+                        <input type="text" class="f-text">
+                        <span class="icon-input-clear"><i class="icon-cross"></i></span>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label class="item-label">电话</label>
+                    <div class="item-field">
+                        <input type="text" class="f-text">
+                    </div>
+                    <icon class="icon-v-right"></icon>
+                </div>
+                <div class="form-item">
+                    <label class="item-label">证件</label>
+                    <div class="item-field">
+                        <input type="text" class="f-text">
+                    </div>
+                    <span class="item-append">身份证</span>
+                    <icon class="icon-v-right"></icon>
+                </div>
+                <div class="form-item">
+                    <label class="item-label">到店时间</label>
+                    <div class="item-field">
+                        <p class="field-vale">22：00之前</p>
+                    </div>
+                    <icon class="icon-v-right"></icon>
+                </div>
+                <div class="form-item">
+                    <label class="item-label">到店时间</label>
+                    <div class="item-field">
+                        <p class="field-vale placeholder">24小时制</p>
+                    </div>
+                    <icon class="icon-v-right"></icon>
+                </div>
+            </form>
+            <h2 class="guide-title">placeholder作为label</h2>
+            <form action="" class="form form--no-label">
+                <div class="form-item form-item--arrow-btn">
+                    <input type="text" class="f-text" placeholder="placeholder作为label">
+                    <i class="icon-v-right"></i>
+                </div>
+                <div class="form-item">
+                    <input type="text" class="f-text" placeholder="hello the world">
+                </div>
+                <div class="form-item">
+                    <textarea class="f-textarea" placeholder="请输入备注"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

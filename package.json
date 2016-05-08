@@ -1,0 +1,29 @@
+{
+  "name": "sheral",
+  "version": "1.0.0",
+  "description": "Focus in mobile UI.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect": "^4.0.0",
+    "sass-sandal": "^3.1.0",
+    "gulp-sass": "^2.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imweb/sheral.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imweb/sheral/issues"
+  },
+  "homepage": "https://github.com/imweb/sheral"
+}

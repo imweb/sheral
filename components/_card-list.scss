@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// card list
+//-----------------------------------------------------
+
+$cardGap:         10px !default;
+$cardGapEdge:     false !default;
+$switchFlex:      true !default;
+
+.card-list {
+
+	@if $switchFlex {
+		display: flex;
+		flex-wrap: wrap;
+	} @else {
+		overflow: hidden;
+	}
+
+	.card-item {
+		@if not $switchFlex {
+			float: left;
+		}
+		width: 50%;
+		margin-bottom: $cardGap;
+		&:nth-of-type(2n) {
+			padding-left: $cardGap / 2;
+			padding-right: $cardGap;
+			@if $cardGapEdge {
+				padding-right: $cardGap;
+			}
+		}
+		&:nth-of-type(2n+1) {
+			padding-left: $cardGap;
+			padding-right: $cardGap / 2;
+			@if $cardGapEdge {
+				padding-left: $cardGap;
+			}
+		}
+		.item-inner {
+			background: #fff;
+		}
+		.item-img {
+			width: 100%;
+		}
+		.item-tt {
+			line-height: 30px;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// tool.scss
+//---------------------------------------------------
+
+$toolHeight:   34px !default;
+$toolBg:       $colorOverlay !default;
+$toolIconSize: 18px !default; 
+
+.tool-bar{
+    @include equal-flex;
+    background-color: $toolBg;
+    color: #fff;
+    height: $toolHeight;
+    li{
+        position: relative;
+    }
+    .tool-icon{
+        width: $toolIconSize;
+        height: $toolIconSize;
+        @include center-translate;
+        fill: #fff;       
+    }
+}

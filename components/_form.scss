@@ -1,0 +1,115 @@
+﻿@charset "UTF-8";
+
+//---------------------------------------------------
+// form.scss
+//---------------------------------------------------
+
+$formLabelWidth: 80px !default;
+$enableFlex: true !default;
+
+.f-text,
+.f-textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid $colorBorder;
+    border-radius: $radiusBase;
+}
+.f-text{
+    height: $barHeight;
+    padding: 7px 5px;
+}
+.f-textarea {
+    height: 100px;
+    line-height: 1.5;
+    resize: none;
+}
+
+
+.form{
+    position: relative;
+
+    &::before{
+        content: "";
+        @include retina-one-px-border(top);
+        z-index: 1;
+    }
+    &::after{
+        content: "";
+        @include retina-one-px-border(bottom);
+    }
+}
+.form-item{
+    display: flex;
+    align-items: center;
+    @extend %bar-line;
+    line-height: $barHeight;
+    min-height: $barHeight;
+    padding: 0 0 0 10px;
+    &:active, &:hover {
+        background-color: #fff;
+    }
+    .item-label{
+        width: $formLabelWidth;
+    }
+    .item-field{
+        flex: 1;
+        width: 1%;
+        .f-text{
+            display: block;
+            height: $barHeight;
+            padding: 7px 5px;
+            border: 0 none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    .item-append{
+        margin-right: 10px;
+        color: $color9;
+    }
+    .icon-v-right{
+        width: 30px;
+        height: 30px;
+        margin-left: -10px;
+        color: #ccc;
+    }
+}
+.form--no-label{
+    .f-text,
+    .f-textarea {
+        border: 0 none;
+        padding-left: 0;
+        padding-right: 10px;
+    }
+}
+
+.icon-input-clear{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    margin-top: -15px;
+    right: 0;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width:16px;
+        height: 16px;
+        transform: translate(-50%,-50%);
+        border-radius: 10px;
+        background-color: #ccc;
+        color: #fff;
+    }
+    .icon-cross {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #fff;
+        &::before,
+        &::after {
+            height: 10px;
+        }
+    }
+}

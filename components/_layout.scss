@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// layout.scss
+//---------------------------------------------------
+
+.header,
+.footer,
+.header-sub {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.header {
+    top: 0;
+    height: $barHeight;
+    z-index: $zIndexHeader;
+}
+.header-sub {
+    top: $barHeight;
+    z-index: $zIndexHeader;
+}
+.footer {
+    bottom: 0;
+    z-index: $zIndexFooter;
+}
+.page {
+    padding-top: $barHeight;
+    padding-bottom: $barHeight + 4px;
+    width: 100%;
+    &.page--has-header{
+        padding-top: 0;
+    }
+}
+
+// 页面切换class
+.transition {
+    position: absolute;
+    animation-fill-mode: both;
+}
+
+// page 位置
+.transition--right-in {
+    animation: pageRightIn 0.3s cubic-bezier(0.42, 0, 0.58, 1.0);
+}
+.transition--left-out {
+    animation: pageLeftOut 0.4s cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
+}
+
+.transition--left-in {
+    animation: pageLeftIn 0.3s cubic-bezier(0.42, 0, 0.58, 1.0);
+}
+.transition--right-out {
+    animation: pageRightOut 0.4s cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
+}
+
+@keyframes pageRightIn {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes pageLeftOut {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+}
+@keyframes pageLeftIn {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes pageRightOut {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+    }
+}

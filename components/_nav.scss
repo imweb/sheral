@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// footer-nav.scss
+//---------------------------------------------------
+
+$navBottomHeight:     $barHeight + 4px !default;
+$navBotttomIconSize:  20px !default;
+$navBottomBg:         #333 !default;
+$navBottomText:       #999 #fff !default; 
+
+$navTopHeight:        35px !default;
+$navTopBg:            #fff !default;
+$navTopText:          #333 $primary !default;
+
+// nav list
+.nav-list{
+    @include equal-flex;
+    text-align: center; 
+}
+
+// nav list bottom
+.nav-list--bottom {
+    background-color: $navBottomBg;
+    height: $navBottomHeight;
+    text-align: center;
+    color: nth($navBottomText, 1);
+    font-size: 12px;
+    li {
+        padding-top: 27px;
+        position: relative;
+        cursor: pointer;
+        &.active {
+            color: nth($navBottomText, 2);
+        }
+    }
+    .item-icon {
+        width: $navBotttomIconSize;
+        height: $navBotttomIconSize;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -10px;
+        fill: currentColor;
+    }
+    .remind-circle,
+    .remind-num{
+        top: 3px;
+        left: 50%;
+        margin-left: 8px;
+    }
+}
+
+// nav top
+.nav-top{
+    position: fixed;
+    top: $barHeight;
+    left: 0;
+    width: 100%;
+}
+.nav-list--top{
+    line-height: $navTopHeight - 1px;
+    background: $navTopBg;
+    border-bottom: 1px solid $colorBorder; 
+    .item-txt{
+        display: inline-block;
+        position: relative;
+        color: nth($navTopText, 1);
+    }
+    .active .item-txt{
+        color: nth($navTopText, 2);
+        &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor; 
+        }
+    }
+}

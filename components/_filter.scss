@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// filter.scss
+//-----------------------------------------------------
+
+$filterHeight:         200px !default;
+$filterTopOffset:      $barHeight !default;
+$filterLevelWidth:     80px 100px !default; // 只设置固定宽度层级的宽度，最后一个剩余宽度的会自动处理
+$filterLevelBgColor:   $colorF !default; // 第一层级背景，往后lighten 2% * i
+
+.panel--filter {
+    height: $filterHeight;
+    position: absolute;
+    top: $filterTopOffset;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: $zIndexOverlay + 5;
+    display: flex;
+}
+
+
+.filter-nav {
+    position: relative;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::before{
+        content: "";
+        @include retina-one-px-border(right);
+        z-index: auto;
+    }
+
+    // &:nth-of-type(1) {
+    //     width: 80px;
+    //     background-color: $colorF;
+    //     .line-item{
+    //         &.active{
+    //             background-color: lighten($colorF, 2%);
+    //         }
+    //     }
+    // }
+    // &:nth-of-type(2) {
+    //     width: 100px;
+    //     background-color: lighten($colorF, 2%);
+    //     .line-item{
+    //         &.active{
+    //             background-color: #fff;
+    //         }
+    //     }
+    // }
+    &:last-of-type{
+        flex: 1;
+        width: 1%;
+        background-color: #fff; 
+        &::before{
+            display: none;
+        }
+    }
+
+    .line-list {
+        background: transparent;
+    }
+    .line-item{
+        @extend %ellipsis;
+    }
+}
+
+@for $i from 1 through length($filterLevelWidth) {
+    .filter-nav:nth-of-type(#{$i}) {
+        width: nth($filterLevelWidth, $i);
+        background-color: if($i == 1, $filterLevelBgColor, lighten($filterLevelBgColor, ($i - 1) * 2%)); 
+        .line-item{
+            &.active{
+                background: if($i == length($filterLevelWidth), #fff, lighten($filterLevelBgColor, $i * 2%));
+            }
+        }
+    }
+}
