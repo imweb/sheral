@@ -1,0 +1,6 @@
+{
+  "name": "Sheral",
+  "tagline": "Focus in mobile UI",
+  "body": "# sheral\r\nFocus in mobile UI\r\n\r\n```js\r\nnpm install\r\n```\r\n\r\n```js\r\ngulp\r\n```\r\n\r\n## React UI Library\r\n\r\n[kodo](https://github.com/mulgore/kodo)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
