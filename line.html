@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta content="yes"name="apple-mobile-web-app-capable"/>
+ 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
+	<meta name="format-detection"content="telphone=no"/>
+	<link rel="stylesheet" href="css/global.css">
+	<title>line list</title>
+    <script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
+    <h1 class="page-tt">line list</h1>
+</header>    
+<main id="pages" class="page-wrap">
+    <article class="page">
+        <div class="content">
+            <h2 class="guide-title">单行文字列表</h2>
+            <ul class="line-list">
+                <li class="line-item">北京</li>
+                <li class="line-item">上海</li>
+                <li class="line-item">广州</li>
+            </ul>
+            <h2 class="guide-title">单行文字居中列表</h2>
+            <ul class="line-list line-list--center">
+                <li class="line-item">北京</li>
+                <li class="line-item">上海</li>
+                <li class="line-item">广州</li>
+            </ul>
+            <h2 class="guide-title">select</h2>
+            <ul class="line-list line-list--select">
+                <li class="line-item">北京</li>
+                <li class="line-item active">上海</li>
+                <li class="line-item">广州</li>
+            </ul>
+            <h2 class="guide-title">mutil select</h2>
+            <ul class="line-list line-list--multi-select">
+                <li class="line-item"><i class="icon-checkbox"></i>北京</li>
+                <li class="line-item active"><i class="icon-checkbox active"></i>上海</li>
+                <li class="line-item"><i class="icon-checkbox"></i>广州</li>
+            </ul>
+            <h2 class="guide-title">indent</h2>
+            <ul class="line-list line-list--indent">
+                <li class="line-item">北京</li>
+                <li class="line-item">上海</li>
+                <li class="line-item">广州</li>
+            </ul>
+            <h2 class="guide-title">v-right(:after)</h2>
+            <ul class="line-list line-list--h-border line-list--indent line-list--after-v">
+                <li class="line-item">北京</li>
+                <li class="line-item active">上海</li>
+                <li class="line-item">广州</li>
+            </ul>
+            <h2 class="guide-title">v-right(i.icon-v-right)</h2>
+            <ul class="line-list line-list--h-border line-list--indent line-list--icon-v">
+                <li class="line-item">北京<i class="icon-v-right"></i></li>
+                <li class="line-item">上海<i class="icon-v-right"></i></li>
+                <li class="line-item">广州<i class="icon-v-right"></i></li>
+            </ul>
+            <h2 class="guide-title">item flex</h2>
+            <ul class="line-list line-list--h-border line-list--indent line-list--flex">
+                <li class="line-item">
+                    <div class="item-bd">flex item</div>
+                    <i class="icon-switch"></i>
+                </li>
+                <li class="line-item">
+                    <div class="item-bd">flex item</div>
+                    <i class="icon-switch active"></i>
+                </li>
+                <li class="line-item">
+                    <svg class="item-icon icon-svg icon-music"><use xlink:href="images/icons.svg#icon-music"></use></svg>
+                    <div class="item-bd">flex item</div>
+                    <i class="icon-v-right"></i>
+                </li>
+                <li class="line-item">
+                    <div class="item-bd">flex item</div>
+                    <span class="item-append">右侧文字</span>
+                    <i class="icon-v-right"></i>
+                </li>
+                <li class="line-item">
+                    <div class="item-bd">flex item</div>
+                    <span class="remind-num">99</span>
+                    <i class="icon-v-right"></i>
+                </li>
+                <li class="line-item">
+                    <div class="item-bd">
+                        <h3 class="item-tt">青岛</h3>
+                        <p class="item-txt">青岛是国家历史文化名城、重点历史风貌保护城市、首批中国优秀旅游城市</p>
+                    </div>
+                    <i class="icon-v-right"></i>
+                </li>
+                <li class="line-item">
+                    <div class="item-bd">
+                        <h3 class="item-tt">青岛</h3>
+                        <p class="item-txt ellipsis">青岛是国家历史文化名城、重点历史风貌保护城市、首批中国优秀旅游城市</p>
+                    </div>
+                    <i class="icon-v-right"></i>
+                </li>
+            </ul>
+        </div>
+    </article>
+</main>
+<footer class="fixed-bottom">
+    <span class="btn-primary full-width">底部按钮测试</span>
+</footer>
+</body>
+</html>
