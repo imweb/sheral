@@ -1,5 +1,5 @@
 # sheral
-Focus in mobile UI
+Focus in mobile UI，[demo](http://imweb.github.io/sheral)
 
 ```js
 npm install
