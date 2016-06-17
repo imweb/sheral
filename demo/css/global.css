@@ -2297,87 +2297,6 @@ i {
   background: #fff;
 }
 
-.section-teacher-banner {
-  background: url(../images/teacher-banner.png) no-repeat;
-  background-size: auto 112px;
-  position: relative;
-  text-align: center;
-  margin-bottom: 20px;
-  padding-top: 10px;
-}
-
-.section-teacher-banner .teacher-name {
-  line-height: 2;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.section-teacher-banner .teacher-avatar {
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-}
-
-.icon-role,
-.icon-pin-list,
-.icon-msg,
-.icon-feedback {
-  width: 24px;
-  height: 24px;
-  background-size: 24px 24px;
-}
-
-.icon-role {
-  background-image: url(../images/icon-role.png);
-}
-
-.icon-pin-list {
-  background-image: url(../images/icon-pin-list.png);
-}
-
-.icon-msg {
-  background-image: url(../images/icon-msg.png);
-}
-
-.icon-feedback {
-  background-image: url(../images/icon-feedback.png);
-}
-
-.line-list--teacher-center > .line-item {
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  -ms-grid-row-align: flex-start;
-  align-items: flex-start;
-}
-
-.line-list--teacher-center > .line-item::before {
-  left: 44px;
-}
-
-.line-list--teacher-center > .line-item > .icon-v-right {
-  margin-top: 2px;
-}
-
-.line-list--teacher-center > .line-item .item-icon {
-  margin-top: 5px;
-}
-
-.line-list--teacher-center .line-item--level .line-list {
-  margin-right: -10px;
-}
-
-.line-item--level .level-tt {
-  color: #999;
-}
-
-.line-item--level .line-item {
-  padding-left: 0;
-}
-
-.line-item--level .line-item::before {
-  display: none;
-}
-
 .search-block {
   background-color: #f5f5f5;
   padding: 7px;
@@ -2426,4 +2345,35 @@ i {
   right: 0;
   top: 0;
   cursor: pointer;
+}
+
+.section-share-block {
+  background: #ffd600;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+}
+
+.section-share-block .block-tt {
+  text-align: center;
+  line-height: 40px;
+}
+
+.share-list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.share-list .share-item {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f88306;
+  color: #fff;
 }

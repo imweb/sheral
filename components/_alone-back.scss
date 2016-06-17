@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// alone-back.scss
+//-----------------------------------------------------
+
+.alone-back{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: $barHeight;
+    height: $barHeight;
+    z-index: $zIndexOverlay;
+    .icon-v-left{
+        color: #fff;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    &.back--overlay{
+        border-radius: 50%;
+        left: 10px;
+        background: rgba(0,0,0,.7);
+    }
+    &.back--black{
+        .icon-v-left{
+            color: #333;
+        }
+    }
+}

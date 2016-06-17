@@ -10,7 +10,7 @@
 
 $(function() {
 	$('.js-back').on('click', function() {
-		window.location.href = '/' ;
+		window.location.href = 'index.html' ;
 	})
 	// $('.js-toast-btn').on('click', function() {
 	// 	$('.js-toast-wrap').addClass('active');
