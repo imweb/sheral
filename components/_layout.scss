@@ -5,8 +5,7 @@
 //---------------------------------------------------
 
 .header,
-.footer,
-.header-sub {
+.footer {
     position: fixed;
     left: 0;
     right: 0;
@@ -16,20 +15,33 @@
     height: $barHeight;
     z-index: $zIndexHeader;
 }
-.header-sub {
-    top: $barHeight;
-    z-index: $zIndexHeader;
-}
 .footer {
     bottom: 0;
     z-index: $zIndexFooter;
 }
 .page {
-    padding-top: $barHeight;
-    padding-bottom: $barHeight + 4px;
     width: 100%;
-    &.page--has-header{
+    padding-top: $barHeight;
+    &.page--no-header{
         padding-top: 0;
+    }
+    &.page--has-footer{
+        padding-bottom: $barHeight + 4px;
+    }
+}
+.ios{
+    .page{
+        position: absolute;
+        top: $barHeight;
+        bottom: 0;
+        padding: 0;
+        -webkit-overflow-scrolling: touch;
+        &.page--no-header{
+            top: 0;
+        }
+        &.page--has-footer{
+            bottom: $barHeight + 4px;
+        }
     }
 }
 
@@ -41,17 +53,17 @@
 
 // page 位置
 .transition--right-in {
-    animation: pageRightIn 0.3s cubic-bezier(0.42, 0, 0.58, 1.0);
+    animation: pageRightIn 0.3s $timingFunction;
 }
 .transition--left-out {
-    animation: pageLeftOut 0.4s cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
+    animation: pageLeftOut 0.4s $timingFunction 0.1s;
 }
 
 .transition--left-in {
-    animation: pageLeftIn 0.3s cubic-bezier(0.42, 0, 0.58, 1.0);
+    animation: pageLeftIn 0.3s $timingFunction;
 }
 .transition--right-out {
-    animation: pageRightOut 0.4s cubic-bezier(0.42, 0, 0.58, 1.0) 0.1s;
+    animation: pageRightOut 0.4s $timingFunction 0.1s;
 }
 
 @keyframes pageRightIn {

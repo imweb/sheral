@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// infinite-loading.scss
+//-----------------------------------------------------
+
+// html 结构
+// .infinite-loading>span.loading-animate>i.loading-dotted*3
+
+.infinite-loading{
+    text-align: center;
+    line-height: 3;
+    .loading-animate{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .loading-dotted{
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        float: left;
+        margin-left: 6px;
+        color: #333;
+        background: currentColor;
+        animation: loadingFade 1s linear infinite;
+        &:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+    }
+}
+
+@keyframes loadingFade{
+    0% {
+        background: rgba(#333, .2);
+    }
+    100% {
+        background: currentColor;
+    }
+}

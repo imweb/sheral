@@ -9,13 +9,14 @@
     z-index: $zIndexOverlay;
     display: none;
     flex-direction: column;
+
     &.active{
         display: flex;
     }
 }
 
 .dialog{
-    display: none;
+    position: relative;
     width: 280px;
     background: #fff;
     border-radius: $radiusBase;

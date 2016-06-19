@@ -7,6 +7,10 @@ $colorLink: #333;
 @import "../../sandal/ext/helper";
 @import "../../sandal/ext/icons";
 
+body{
+	background: $colorF;
+}
+
 .guide-title{
     margin: 10px 0 0 10px;
     font-weight: bold;
@@ -24,6 +28,8 @@ $colorLink: #333;
 		margin-bottom: 20px;
 	}
 }
+
+
 // btn
 //-------------------------------------------------
 @import "../../components/btn";
@@ -91,4 +97,8 @@ $colorLink: #333;
 // alone-back
 //-------------------------------------------------
 @import "../../components/alone-back";
+
+// infinite-loading
+//-------------------------------------------------
+@import "../../components/infinite-loading";
 
