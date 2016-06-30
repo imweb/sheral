@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<meta name="format-detection" content="telphone=no,email=no"/>
+	<link rel="stylesheet" href="css/global.css">
+	<title>progress</title>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <style type="text/css">
+        .circle-progress{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
+    <h1 class="page-tt">progress</h1>
+</header>
+<main id="pages" class="page-wrap">
+    <div class="page">    
+        <div class="content">
+            <h2 class="guide-title">条形进度</h2>
+            <div class="bar-progress">
+                <span class="progress-percent" style="transform: translate(-50%, 0)"></span>
+            </div>
+            <h2 class="guide-title">圆形进度</h2>
+            <div class="circle-progress">
+                <div class="circle-left">
+                    <div class="left-inner"></div>
+                </div>
+                <div class="circle-right">
+                    <div class="right-inner"></div>
+                </div>
+                <span class="progress-num">0%</span>
+            </div>
+            <div class="circle-progress">
+                <div class="circle-left">
+                    <div class="left-inner"></div>
+                </div>
+                <div class="circle-right">
+                    <div class="right-inner"></div>
+                </div>
+                <span class="progress-num">0%</span>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

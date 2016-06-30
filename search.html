@@ -2,10 +2,9 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta content="yes"name="apple-mobile-web-app-capable"/>
- 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
-	<meta name="format-detection"content="telphone=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
 	<title>search</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
@@ -17,7 +16,7 @@
     <h1 class="page-tt">search</h1>
 </header>
 <main id="pages" class="page-wrap">
-    <article class="page">
+    <div class="page page--header-sub">
         <section class="header-sub">
             <div class="search-block">
                 <div class="search-ele-wrap">
@@ -27,12 +26,20 @@
                 </div>
             </div>
         </section>
-        <div class="content no-header-sub">
+        <div class="content">
+            <div class="search-block search-block--center">
+                <div class="search-ele-wrap">
+                    <i class="icon-search"></i>搜索
+                    <span class="btn-voice">
+                        <svg class="icon-svg icon-voice"><use xlink:href="images/icons.svg#icon-voice"></use></svg>
+                    </span>
+                </div>
+            </div>
             <div class="search-block search-block--cancel">
                 <div class="search-ele-wrap"><input type="search" class="search-text"><i class="icon-search"></i><span class="icon-input-clear"><i class="icon-cross"></i></span><span class="icon-loading icon-loading--gray" style="right:33px;"><i class="icon-loading-circle"></i></span></div><span class="search-cancel">取消</span>
             </div>
         </div>
-    </article>
+    </div>
 </main>
 </body>
 </html>
