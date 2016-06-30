@@ -457,16 +457,18 @@
     position: relative;
     display: block;
     overflow: hidden;
-    &:active,
-    &:hover {
-        background-color: $colorF;
+    @if $activeStateSwitch{
+        &:active,
+        &:hover {
+            background-color: $colorF;
+        }
     }
     &::before {
         content: "";
         @include retina-one-px-border;
         // left: 10px;
     }
-    &:first-child {
+    &:first-of-type {
         &::before {
             display: none;
         }
@@ -493,6 +495,12 @@
     position: relative;
     background: #fff;
     margin: 10px 0;
+    @if $activeStateSwitch{
+        &:active,
+        &:hover {
+            background-color: $colorF;
+        }
+    }
     &::before{
         content: "";
         @include retina-one-px-border;

@@ -6,6 +6,18 @@
 
 $scrollSelectHeight:             180px !default;
 
+.panel--scroll-select{
+    .panel-hd{
+        @extend %justify;
+        background: $colorF;
+        line-height: 44px;
+        color: $primary;
+        .hd-btn{
+            padding: 0 15px;
+        }
+    }
+}
+
 .scroll-select-group,
 .scroll-select{
     overflow: hidden;

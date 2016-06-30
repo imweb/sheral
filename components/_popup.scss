@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// popup.scss
+//---------------------------------------------------
+
+
+$popupBg:            darken($primary, 5%) !default;
+$popupTextColor:     #fff !default;
+$popupRadius:        false !default;
+$popupTriangle:      true !default;
+
+.popup{
+	position: fixed;
+	color: $popupTextColor;
+	z-index: $zIndexOverlay;
+	.line-list{
+		background: $popupBg;
+		@if $popupRadius{
+			border-radius: $popupRadius;
+		}
+	}
+	.line-item{
+		line-height: 36px;
+		padding: 0 10px;
+		display: flex;
+		align-items: center;
+		.item-icon{
+			margin-right: 5px;
+			fill: $popupTextColor;
+		}
+	}
+}
+
+.popup--header-more{
+	top: $barHeight;
+	right: 5px;
+
+	@if $popupTriangle{
+		padding-top: 7px;
+		.popup-triangle{
+			position: absolute;
+			top: 1px;
+			right: 10px;
+			@include triangle(top, 6px, $popupBg);
+		}
+	}
+}

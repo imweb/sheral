@@ -4,14 +4,28 @@
 // actionsheet.scss
 //---------------------------------------------------
 
-.actionsheet {
+$actionsheetFullSwitch:    false !default;
+
+.panel--actionsheet {
     background: $colorF;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    z-index: $zIndexOverlay + 5;
-    .line-list{
-        border-radius: $radiusBase;
-    }
+    @if $actionsheetFullSwitch{
+	    padding: 10px;
+	    .line-list{
+	        border-radius: $radiusBase;
+	    }
+	} @else {
+		.line-list{
+			position: relative;
+			&::after{
+				content: "";
+				@include retina-one-px-border(bottom);
+			}
+			&:last-of-type{
+				&::after{
+					top: 0;
+					bottom: auto;
+				}
+			}
+		}
+	}
 }

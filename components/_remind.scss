@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+//----------------------------------------------------- 
+// remind scss
+//----------------------------------------------------- 
+
+
+// 红数字提醒
+.remind-num {
+    position: absolute;
+    border-radius: 10px;
+    min-width: 17px;
+    color: #fff;
+    font-size: 12px;
+    background-color: $orange;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 4px;
+    letter-spacing: 1px;
+    // transform: scale(0.9);
+}
+
+// 红点提醒
+.remind-circle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: $orange;
+}
+.remind-wrap {
+    position: relative;
+    .remind-num,
+    .remind-circle {
+    	top: 0;
+    	right: 0;
+    }
+}

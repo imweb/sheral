@@ -26,17 +26,8 @@ $enableFlex: true !default;
 
 
 .form{
-    position: relative;
-
-    &::before{
-        content: "";
-        @include retina-one-px-border(top);
-        z-index: 1;
-    }
-    &::after{
-        content: "";
-        @include retina-one-px-border(bottom);
-    }
+    background: #fff;
+    @extend %border-tb;
 }
 .form-item{
     display: flex;

@@ -2,19 +2,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<meta content="yes"name="apple-mobile-web-app-capable"/>
- 	<meta content="black"name="apple-mobile-web-app-status-bar-style"/>
-	<meta name="format-detection"content="telphone=no"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
 	<title>nav</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <style type="text/css">
-/*.item-icon,.tool-icon{
-    background-color: #fff;
-}
-*/    </style>
 </head>
 <body>
 <header class="header">
@@ -22,16 +16,21 @@
     <h1 class="page-tt">nav list</h1>
 </header>
 <main id="pages" class="page-wrap">
-    <div class="page"> 
-        <nav class="nav-top">
-            <ul class="nav-list nav-list--top">
-                <li class="nav-item active"><a class="item-txt" href="#">个性推荐</a></li>
-                <li class="nav-item"><a class="item-txt" href="#">歌单</a></li>
-                <li class="nav-item"><a class="item-txt" href="#">主播电台</a></li>
-                <li class="nav-item"><a class="item-txt" href="#">排行榜</a></li>
+    <div class="page page--header-sub"> 
+        <section class="header-sub">
+            <ul class="nav-list nav-list--tab">
+                <li class="nav-item active">个性推荐</li>
+                <li class="nav-item">歌单</li>
+                <li class="nav-item">主播电台</li>
+                <li class="nav-item">排行榜</li>
             </ul>
-        </nav>
+        </section>
         <div class="content">
+            <ul class="nav-list nav-list--btn">
+                <li class="nav-item active">个性推荐</li>
+                <li class="nav-item">歌单</li>
+                <li class="nav-item">主播电台</li>
+            </ul>
         </div>
     </div>
 </main>

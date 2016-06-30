@@ -107,10 +107,10 @@ $headerTextColor:     #fff !default;
                     color: $headerTextColor;
                 }
             }
-            &:first-child{
+            &:first-of-type{
                 border-radius: 5px 0 0 5px;
             }
-            &:last-child {
+            &:last-of-type {
                 border-radius: 0 5px 5px 0;
             }
         }

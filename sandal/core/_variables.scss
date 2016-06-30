@@ -64,7 +64,12 @@ $radiusSmall:                     3px !default;
 
 // timing-function
 //-----------------------------------------------------
-$timingFunction:                  cubic-bezier(0.42, 0, 0.58, 1) !default;
+$timingFunction:                  cubic-bezier(0.42, 0, 0.58, 1);
+
+
+// active state switch
+//-----------------------------------------------------
+$activeStateSwitch:               true !default;
 
 
 // z-index

@@ -4,9 +4,14 @@
 // tool.scss
 //---------------------------------------------------
 
-$toolHeight:   34px !default;
-$toolBg:       $colorOverlay !default;
-$toolIconSize: 18px !default; 
+$toolHeight:              34px !default;
+$toolBg:                  $colorOverlay !default;
+$toolIconSize:            18px !default; 
+
+$quickToolNum:            4 !default;
+$quickToolSize:           30px !default;
+$quickToolBg:             $primary !default;
+$quickToolPos:            right 10px 80px !default;
 
 .tool-bar{
     @include equal-flex;
@@ -21,5 +26,63 @@ $toolIconSize: 18px !default;
         height: $toolIconSize;
         @include center-translate;
         fill: #fff;       
+    }
+}
+
+$toolNum:       4 !default;
+
+.fixed-quick-tool{
+    position: fixed;
+    #{nth($quickToolPos, 1)}: nth($quickToolPos, 2);
+    bottom: nth($quickToolPos, 3);
+    color: #fff;
+    .tool-switch{
+        width: $barHeight;
+        height: $barHeight;
+        display: block;
+        background: $colorOverlay;
+        border-radius: 50%;
+        transition: transform .3s $timingFunction;
+        .icon-plus{
+            display: block;
+            width: $barHeight;
+            height: $barHeight;
+        }
+    }
+    .tool-list{
+        width: $quickToolSize;
+        height: $quickToolSize;
+        @include center-translate(both);
+    }
+    .tool-item{
+        width: $quickToolSize;
+        height: $quickToolSize;
+        position: absolute;
+        background: $quickToolBg;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity .3s linear, transform .3s $timingFunction;
+        @include center-flex(both);
+    }
+    .item-icon{
+        fill: #fff;
+    }
+}
+.fixed-quick-tool.active{
+    .tool-switch{
+        transform: rotate(45deg);
+    }
+    .tool-item{
+        opacity: 1;
+    
+        @for $i from 1 through $quickToolNum{
+            &:nth-of-type(#{$i}) {
+                transform: rotate(($i - 1) * 90deg / ($quickToolNum - 1)) translateX(-80px);
+                // transition-delay: ($i - 1) * 0.03s;
+                .item-icon{
+                    transform: rotate(-($i - 1) * 90deg / ($quickToolNum - 1));
+                }
+            }
+        }
     }
 }

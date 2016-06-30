@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------	
+// overlay scss
+//-----------------------------------------------------	
+
+.overlay {
+	display: none;
+	background: $colorOverlay;
+	@include fixed(all);
+	z-index: $zIndexOverlay;
+	&.active {
+		display: block;
+	}
+	// no header
+    &.overlay--no-header {
+        top: $barHeight;
+    }
+    // 全透明
+	&.overlay--transparent {
+		background:rgba(0,0,0,0);
+	}
+}

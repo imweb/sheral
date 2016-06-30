@@ -60,9 +60,17 @@
                     @include retina-one-px-border(right);
                 }
             }
-            &:hover,
-            &:active{
-                background: $colorF;
+            @if $activeStateSwitch{
+                &:first-of-type{
+                    border-bottom-left-radius: $radiusBase;
+                }
+                &:last-of-type{
+                    border-bottom-right-radius: $radiusBase;
+                }
+                &:hover,
+                &:active{
+                    background: $colorF;
+                }
             }
         }
         &.ft--full{
@@ -70,9 +78,18 @@
             .ft-btn{
                 width: 100%;
                 border-left: none;
-                &:first-child{
+                &:first-of-type{
                     &::after{
                         display: none;
+                    }
+                }
+                @if $activeStateSwitch{
+                    &:first-of-type{
+                        border-bottom-left-radius: 0;
+                    }
+                    &:last-of-type{
+                        border-bottom-left-radius: $radiusBase;
+                        border-bottom-right-radius: $radiusBase;
                     }
                 }
             }

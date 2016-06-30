@@ -4,32 +4,17 @@
 // panel.scss
 //-----------------------------------------------------
 
-$panelWidth: 140px !default;
-
-.panel{
+.header-panel,
+.bottom-panel{
     position: fixed;
     left: 0;
-    top: 0;
-    bottom: 0;
-    width: $panelWidth;
-    color: #fff; 
-    background: #000;
+    right: 0;
     z-index: $zIndexOverlay + 5;
-    transform: translate3d(-$panelWidth, 0, 0);
-    transition: transform 0.3s ease-in-out;
-    box-sizing: border-box;
-    &.active{
-        transform: translate3d(0, 0, 0);
-    }
+    background: #fff;
 }
-.page--panel-on{
-    transition: transform 0.3s ease-in-out;
-    transform: translate3d($panelWidth, 0, 0);
+.header-panel{
+    top: $barHeight;
 }
-.page--panel-off{
-    transform: translate3d(0, 0, 0);
-}
-.mask-panel{
-    @extend .panel;
-    background: $colorOverlay;
+.bottom-panel{
+    bottom: 0;
 }

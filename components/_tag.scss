@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// tag.scss
+//-----------------------------------------------------
+
+$tagHeight:          30px !default;
+$tagRadius:          $tagHeight / 2 !default;
+$tagActiveColor:     $primary !default;
+$tagBg:              #fff !default;
+
+$tagBgSwitch:        true !default; // 是背景还是border
+
+.tag-list{
+    overflow: hidden;
+    .tag-item{
+        float: left;
+        padding: 0 10px;
+        @if $tagBgSwitch{
+            line-height: $tagHeight;
+        } @else {
+            border: 1px solid $colorBorder;
+            line-height: $tagHeight - 2px;
+        }
+        border-radius: $tagRadius;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        background: $tagBg;
+        white-space: nowrap;
+        &.active{
+            @if $tagBgSwitch{
+                color: #fff;
+                background: $tagActiveColor;
+            } @else {
+                color: $tagActiveColor;
+                background: $tagBg;
+                border-color: currentColor;
+            }
+        }
+    }
+}

@@ -6,19 +6,17 @@
 	
 	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
-	<title>toast</title>
+	<title>popup</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <style type="text/css">
-        .toast{
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 <header class="header">
     <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
-    <h1 class="page-tt">toast</h1>
+    <div class="header-right">
+        <i class="header-icon icon-dots"></i>
+    </div>
+    <h1 class="page-tt">popup</h1>
 </header>
 <main id="pages" class="page-wrap">
     <div class="page">
@@ -35,26 +33,25 @@
     </div>
 </main>
 
-<section class="toast-wrap active">
-    <div class="toast">
-        <p class="toast-txt">网络连接超时，请稍后重试</p>
-    </div>
-    <div class="toast">
-        <i class="toast-icon icon-right"></i>
-        <p class="toast-txt">干得漂亮</p>
-    </div>
-    <div class="toast toast--loading">
-        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
-    </div>
-    <div class="toast toast--loading has-close">
-        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
-        <i class="icon-close">&times;</i>
-    </div>
-    <div class="toast toast--loading has-close">
-        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
-        <p class="toast-text">提交中...</p>
-        <i class="icon-close">&times;</i>
-    </div>
+<div class="overlay overlay--no-header overlay--transparent active"></div>
+<section class="popup popup--header-more">
+    <i class="popup-triangle"></i>
+    <ul class="line-list">
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-email"><use xlink:href="images/icons.svg#icon-email"></use></svg>
+            最新消息
+        </li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-user"><use xlink:href="images/icons.svg#icon-user"></use></svg>
+            我的中心
+        </li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-setting"><use xlink:href="images/icons.svg#icon-setting"></use></svg>
+            设置</li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-logout"><use xlink:href="images/icons.svg#icon-logout"></use></svg>
+            退出</li>
+    </ul>
 </section>
 </body>
 </html>

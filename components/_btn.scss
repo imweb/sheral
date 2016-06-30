@@ -68,10 +68,11 @@ $btnColor:                        #333 #e6e6e6 !default; // 默认按钮的textC
         border-left: 1px solid rgba(0, 0, 0, 0.1);
         cursor: pointer;
         box-sizing: border-box;
-        &:first-child {
+        &:first-of-type {
             border-left: none;
         }
-        &:active {
+        &:active,
+        &:hover {
             background: darken(#fff, 10%);
         }
     }

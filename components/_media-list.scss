@@ -7,6 +7,7 @@
 $mediaImgSize:       60px 60px !default;
 $mediaFlex:          false !default;
 $mediaRightWidth:    60px !default;
+$mediaIndent:        10px !default;
 
 .media-list{
 	background: #fff;
@@ -23,13 +24,14 @@ $mediaRightWidth:    60px !default;
 		}
 		@if not $mediaFlex{
 			padding-left: 20px + nth($mediaImgSize, 1);
+			min-height: nth($mediaImgSize, 2) + 20px;
 		}
 		&::before{
 			content: "";
 			@include retina-one-px-border(bottom);
-			left: 10px;
+			left: $mediaIndent;
 		}
-		&:last-child{
+		&:last-of-type{
 			&::before{
 				display: none;
 			}
@@ -54,9 +56,7 @@ $mediaRightWidth:    60px !default;
 			@if $mediaFlex{
 				flex: 1;
 				width: 1%;
-			} @else {
-				min-height: nth($mediaImgSize, 2);
-			}
+			} 
 			.bd-tt{
 				font-weight: normal;
 				@extend %ellipsis;
@@ -94,15 +94,12 @@ $mediaRightWidth:    60px !default;
 				transform: translateY(-50%);
 			}
 		}
-		
 	}
 }
 
 .media-list--right{
 	.media-item{
 		padding-right: $mediaRightWidth + 10px;
-		
-
 		.item-right{
 			position: absolute;
 			top: 50%;
@@ -110,24 +107,6 @@ $mediaRightWidth:    60px !default;
 			transform: translateY(-50%);
 			@if $mediaFlex {
 				margin-left: 10px;
-			}
-		}
-	}
-}
-
-.media-list--middle{
-	
-	.media-item{
-		@if $mediaFlex{
-			align-items: center;
-		}
-		.item-bd{
-			@if $mediaFlex{
-				// min-height: auto;
-			} @else {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
 			}
 		}
 	}

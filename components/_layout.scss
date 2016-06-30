@@ -5,7 +5,8 @@
 //---------------------------------------------------
 
 .header,
-.footer {
+.footer,
+.header-sub{
     position: fixed;
     left: 0;
     right: 0;
@@ -19,9 +20,16 @@
     bottom: 0;
     z-index: $zIndexFooter;
 }
+.header-sub{
+    top: $barHeight;
+    z-index: $zIndexHeader;
+}
 .page {
     width: 100%;
     padding-top: $barHeight;
+    &.page--header-sub{
+        padding-top: $barHeight * 2;
+    }
     &.page--no-header{
         padding-top: 0;
     }
@@ -36,6 +44,10 @@
         bottom: 0;
         padding: 0;
         -webkit-overflow-scrolling: touch;
+        &.page--header-sub{
+            top: $barHeight * 2;
+            padding-top: 0;
+        }
         &.page--no-header{
             top: 0;
         }

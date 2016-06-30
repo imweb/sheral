@@ -4,10 +4,10 @@
 // cell list
 //-----------------------------------------------------
 
-$cellNum:          4 !default;
-$cellIconSize:     24px !default;
-$cellPadding:      15px !default; // 非方形格式，上下padding
-// $cellSquare:       false !default; // 是否是正方形格子
+$cellNum:           4 !default;
+$cellIconSize:      24px !default;
+$cellPadding:       15px !default; // 非正方形格式，上下padding
+$cellSquareSwitch:  true !default; // 是否是正方形格子
 
 .cell-list{
 	background: #fff;
@@ -44,7 +44,7 @@ $cellPadding:      15px !default; // 非方形格式，上下padding
 	}
 }
 
-// @if $cellSquare {
+@if $cellSquareSwitch {
 	.cell-list--square {
 		.cell-item{
 			padding-top: 100% / $cellNum;
@@ -58,4 +58,4 @@ $cellPadding:      15px !default; // 非方形格式，上下padding
 			transform: translateY(-50%);
 		}
 	}
-// }
+}
