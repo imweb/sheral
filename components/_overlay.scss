@@ -9,6 +9,7 @@
 	background: $colorOverlay;
 	@include fixed(all);
 	z-index: $zIndexOverlay;
+	.active &,
 	&.active {
 		display: block;
 	}

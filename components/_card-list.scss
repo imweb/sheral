@@ -5,11 +5,13 @@
 //-----------------------------------------------------
 
 $cardGap:              10px !default;
-$carLineNum:           2 !default;
+$carLineNum:           3 !default; // 2 或 3
 $cardGapEdge:          true !default;
-$cardFlexSwitch:       true !default;
+$cardFlexSwitch:       false !default;
 
 $cardBorderSwitch:     true !default;
+
+$cardGapSwitch:        true !default;
 
 .card-list {
 	@if $cardFlexSwitch {
@@ -17,14 +19,6 @@ $cardBorderSwitch:     true !default;
 		flex-wrap: wrap;
 	} @else {
 		overflow: hidden;
-	}
-	@if $cardBorderSwitch{
-		background: #fff;
-		position: relative;
-		&::before{
-			content: "";
-			@include retina-one-px-border(top);
-		}
 	}
 
 	.card-item {
@@ -35,41 +29,52 @@ $cardBorderSwitch:     true !default;
 			float: left;
 		}
 
-		@if $cardBorderSwitch{
-			padding: $cardGap !important;
-			&::after{
-				content: "";
-				@include retina-one-px-border(bottom);
-			}
-			&:nth-of-type(2n+1){
-				&::before{
-					content: "";
-					@include retina-one-px-border(right);
-				}
-			}
-		} @else {
-			margin-bottom: $cardGap;
-			&:nth-of-type(2n) {
-				padding-left: $cardGap / 2;
-				@if $cardGapEdge {
-					padding-right: $cardGap;
-				}
-			}
-			&:nth-of-type(2n+1) {
-				padding-right: $cardGap / 2;
-				@if $cardGapEdge {
-					padding-left: $cardGap;
-				}
-			}
-		}
-		
-		.item-inner {
-		}
 		.item-img {
 			width: 100%;
 		}
 		.item-tt {
 			line-height: 30px;
+		}
+	}
+}
+@if $cardBorderSwitch{
+	.card-list--border{
+		background: #fff;
+		position: relative;
+		&::before{
+			content: "";
+			@include retina-one-px-border(top);
+		}
+		.card-item{
+			padding: $cardGap !important;
+			&::after{
+				content: "";
+				@include retina-one-px-border(bottom);
+			}
+			
+			&::before{
+				content: "";
+				@include retina-one-px-border(right);
+			}
+			
+			$type: if($carLineNum == 2, '2n', '3n');
+
+			&:nth-of-type(#{$type}){
+				&::before{
+					display: none;
+				}
+			}
+		}
+	}
+}
+@if $cardGapSwitch{
+	.card-list--gap{
+		padding-left: $cardGap / 2;
+		padding-right: $cardGap / 2;
+		.card-item{
+			margin-bottom: $cardGap;
+			padding-left: $cardGap / 2;
+			padding-right: $cardGap / 2;
 		}
 	}
 }

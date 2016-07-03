@@ -1151,7 +1151,7 @@ body {
   z-index: 4000;
 }
 
-.overlay.active {
+.active .overlay, .overlay.active {
   display: block;
 }
 
@@ -1487,6 +1487,10 @@ body {
 }
 
 .line-list--multi-select .active {
+  color: #188eee;
+}
+
+.line-list--multi-select .active .icon-checkbox {
   color: #188eee;
 }
 
@@ -1900,17 +1904,29 @@ body {
 }
 
 .card-list {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.card-list .card-item {
+  position: relative;
+  width: 33.33333%;
+  float: left;
+}
+
+.card-list .card-item .item-img {
+  width: 100%;
+}
+
+.card-list .card-item .item-tt {
+  line-height: 30px;
+}
+
+.card-list--border {
   background: #fff;
   position: relative;
 }
 
-.card-list::before {
+.card-list--border::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1924,13 +1940,11 @@ body {
   border-top: 1px solid #dbdbdb;
 }
 
-.card-list .card-item {
-  position: relative;
-  width: 50%;
+.card-list--border .card-item {
   padding: 10px !important;
 }
 
-.card-list .card-item::after {
+.card-list--border .card-item::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1946,7 +1960,7 @@ body {
   bottom: 0;
 }
 
-.card-list .card-item:nth-of-type(2n+1)::before {
+.card-list--border .card-item::before {
   content: "";
   position: absolute;
   left: 0;
@@ -1962,12 +1976,19 @@ body {
   right: 0;
 }
 
-.card-list .card-item .item-img {
-  width: 100%;
+.card-list--border .card-item:nth-of-type(3n)::before {
+  display: none;
 }
 
-.card-list .card-item .item-tt {
-  line-height: 30px;
+.card-list--gap {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card-list--gap .card-item {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .media-list {
@@ -2264,6 +2285,14 @@ body {
   box-sizing: border-box;
 }
 
+.form-item .item-field .f-text.f-text--right-icon {
+  padding-right: 30px;
+}
+
+.form-item .item-field .icon-input-clear {
+  height: 44px;
+}
+
 .form-item .item-append {
   margin-right: 10px;
   color: #999;
@@ -2288,7 +2317,9 @@ body {
   width: 30px;
   height: 30px;
   top: 50%;
-  margin-top: -15px;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   right: 0;
 }
 
@@ -2333,6 +2364,14 @@ body {
 
 .bottom-panel {
   bottom: 0;
+}
+
+.panel--scroll-select {
+  display: none;
+}
+
+.active .panel--scroll-select {
+  display: block;
 }
 
 .panel--scroll-select .panel-hd {
@@ -2478,6 +2517,11 @@ body {
 
 .panel--actionsheet {
   background: #f5f5f5;
+  display: none;
+}
+
+.active .panel--actionsheet {
+  display: block;
 }
 
 .panel--actionsheet .line-list {

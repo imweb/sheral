@@ -23,8 +23,6 @@ $enableFlex: true !default;
     line-height: 1.5;
     resize: none;
 }
-
-
 .form{
     background: #fff;
     @extend %border-tb;
@@ -52,6 +50,12 @@ $enableFlex: true !default;
             border: 0 none;
             width: 100%;
             box-sizing: border-box;
+            &.f-text--right-icon{
+                padding-right: 30px;
+            }
+        }
+        .icon-input-clear{
+            height: $barHeight;
         }
     }
     .item-append{
@@ -79,7 +83,7 @@ $enableFlex: true !default;
     width: 30px;
     height: 30px;
     top: 50%;
-    margin-top: -15px;
+    transform: translate(0, -50%);
     right: 0;
     &::before{
         content: "";

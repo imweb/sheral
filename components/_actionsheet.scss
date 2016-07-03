@@ -8,6 +8,10 @@ $actionsheetFullSwitch:    false !default;
 
 .panel--actionsheet {
     background: $colorF;
+    display: none;
+    .active & {
+    	display: block;
+    }
     @if $actionsheetFullSwitch{
 	    padding: 10px;
 	    .line-list{

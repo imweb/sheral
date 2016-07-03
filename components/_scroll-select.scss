@@ -7,6 +7,10 @@
 $scrollSelectHeight:             180px !default;
 
 .panel--scroll-select{
+    display: none;
+    .active &{
+        display: block;
+    }
     .panel-hd{
         @extend %justify;
         background: $colorF;
