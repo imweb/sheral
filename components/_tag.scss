@@ -9,29 +9,38 @@ $tagRadius:          $tagHeight / 2 !default;
 $tagActiveColor:     $primary !default;
 $tagBg:              #fff !default;
 
-$tagBgSwitch:        true !default; // 是背景还是border
+$tagBorderSwitch:    true !default; // border
+$tagBgSwitch:        true !default; // bg
 
 .tag-list{
     overflow: hidden;
     .tag-item{
         float: left;
         padding: 0 10px;
-        @if $tagBgSwitch{
-            line-height: $tagHeight;
-        } @else {
-            border: 1px solid $colorBorder;
-            line-height: $tagHeight - 2px;
-        }
         border-radius: $tagRadius;
         margin-right: 10px;
         margin-bottom: 10px;
         background: $tagBg;
         white-space: nowrap;
-        &.active{
-            @if $tagBgSwitch{
+    }
+}
+@if $tagBorderSwitch{
+    .tag-list--border{
+        .tag-item{
+            line-height: $tagHeight;
+            &.active{
                 color: #fff;
                 background: $tagActiveColor;
-            } @else {
+            }
+        }
+    }
+}
+@if $tagBgSwitch{
+    .tag-list--bg{
+        .tag-item{
+            border: 1px solid $colorBorder;
+            line-height: $tagHeight - 2px;
+            &.active{
                 color: $tagActiveColor;
                 background: $tagBg;
                 border-color: currentColor;

@@ -1,0 +1,77 @@
+
+$stepperWidth:          100px !default;
+$stepperHeight:         30px !default;
+$stepperTextColor:      #666 !default;
+$stepperBtnBg:          #fff !default;
+$stepperBorderColor:    $colorBorder !default; 
+$stepperRadius:         5px !default;
+
+$stepperMinSwitch:      true !default;
+
+
+.stepper{
+	position: relative;
+	padding: 0 $stepperHeight;
+	width: $stepperWidth;
+	background: $stepperBtnBg;
+	@if $stepperRadius{
+		border-radius: $stepperRadius;
+	}
+	.stepper-plus,
+	.stepper-minus{
+		position: absolute;
+		top: 0;
+		border: 1px solid $stepperBorderColor;
+		height: $stepperHeight;
+		width: $stepperHeight;
+		color: $stepperTextColor;
+	}
+	.stepper-plus{
+		right: 0;
+		@if $stepperRadius{
+			border-radius: 0 $stepperRadius $stepperRadius 0;
+		}
+		&::before,
+		&::after{
+			content: "";
+			height: 2px;
+			width: 12px;
+			background: currentColor;
+			@include center-translate(both);
+		}
+		&::after{
+			height: 12px;
+			width: 2px;
+		}
+	}
+	.stepper-minus{
+		left: 0;
+		@if $stepperRadius{
+			border-radius: $stepperRadius 0 0 $stepperRadius;
+		}
+		&::before{
+			content: "";
+			height: 2px;
+			width: 12px;
+			background: currentColor;
+			@include center-translate(both);
+		}
+	}
+	.stepper-num{
+		width: 100%;
+		border: 1px solid $stepperBorderColor;
+		border-width: 1px 0;
+		height: $stepperHeight;
+		text-align: center;
+	}
+}
+
+@if $stepperMinSwitch{
+	.stepper--mini{
+		width: $stepperHeight * 2;
+		height: $stepperHeight;
+		.stepper-plus{
+			border-left: 0;
+		}
+	}
+}

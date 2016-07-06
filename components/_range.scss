@@ -8,6 +8,8 @@ $rangeHeight:             $barHeight !default;
 $thumbBg:                 $primary !default;
 $trackBg:                 $colorC !default;
 
+$rangeValueWidth:         40px !default;
+
 
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -67,6 +69,20 @@ input[type=range]::-webkit-media-slider-thumb{
   input[type=range]{
     position: relative;
     z-index: 2;
+  }
+}
+
+.range-all{
+  display: flex;
+  background: #fff;
+  .range-value{
+    width: $rangeValueWidth;
+    text-align: center;
+    line-height: $rangeHeight;
+  }
+  .range-wrap{
+    flex: 1;
+    width: 1%;
   }
 }
 

@@ -21,7 +21,7 @@ $navBtnColorActive:   #fff !default;
 
 // nav list
 .nav-list{
-    @include equal-flex;
+    @include equal-flex(nav-item);
     text-align: center; 
 }
 

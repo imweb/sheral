@@ -6,19 +6,19 @@
 	
 	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
-	<title>scroll select</title>
+	<title>picker</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
-    <h1 class="page-tt">scroll select</h1>
+    <h1 class="page-tt">picker</h1>
 </header>
 <main id="pages" class="page-wrap">
     <div class="page">    
         <article class="article">
-            <p class="btn-outline full-width js-scroll-select-btn">scroll select</p>
+            <p class="btn-outline full-width js-picker-btn">picker</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis nulla, ea ex quas ut pariatur totam hic ducimus nostrum, repudiandae. Id ea asperiores commodi sapiente perspiciatis, obcaecati sint natus.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo minima corporis nesciunt similique eum tenetur, a error odit dicta! Quos atque odit quibusdam in deserunt sed temporibus officiis vel sit.</p>
             <p>Sit rem reiciendis, nobis, id consequatur saepe quam excepturi non commodi cum omnis velit iusto et dolores totam consequuntur, nisi quisquam cumque maiores tempora labore incidunt? Ex odit sapiente nam!</p>
@@ -29,7 +29,7 @@
     </div>
     <!-- <div class="page">
         <div class="content">
-            <div class="scroll-select">
+            <div class="picker">
                 <ul class="select-list">
                     <li>上海</li>
                     <li>北京</li>
@@ -40,8 +40,8 @@
                 <div class="select-mask"></div>
             </div>
             <h3 class="guide-title">多个组合，默认每个宽度为50%，如大于2个，请重新控制每个的宽度</h2>
-            <div class="scroll-select-group">
-                <div class="scroll-select">
+            <div class="picker-group">
+                <div class="picker">
                     <ul class="select-list">
                         <li>7月</li>
                         <li>8月</li>
@@ -52,7 +52,7 @@
                     </ul>
                     <div class="select-mask"></div>
                 </div>
-                <div class="scroll-select">
+                <div class="picker">
                     <ul class="select-list">
                         <li>5日</li>
                         <li>6日</li>
@@ -68,13 +68,13 @@
 </main>
 <section class="panel-wrap">
     <div class="overlay"></div>
-    <section class="bottom-panel panel--scroll-select">
+    <section class="bottom-panel panel--picker">
         <div class="panel-hd">
             <span class="hd-btn btn-cancel">取消</span>
             <span class="hd-btn btn-ok">完成</span>
         </div>
-        <div class="scroll-select-group">
-            <div class="scroll-select">
+        <div class="picker-list">
+            <div class="picker-item">
                 <ul class="select-list">
                     <li>7月</li>
                     <li>8月</li>
@@ -83,9 +83,9 @@
                     <li>11月</li>
                     <li>12月</li>
                 </ul>
-                <div class="select-mask"></div>
+                <div class="picker-mask"></div>
             </div>
-            <div class="scroll-select">
+            <div class="picker-item">
                 <ul class="select-list">
                     <li>5日</li>
                     <li>6日</li>
@@ -93,7 +93,7 @@
                     <li>8日</li>
                     <li>9日</li>
                 </ul>
-                <div class="select-mask"></div>
+                <div class="picker-mask"></div>
             </div>
         </div>
     </section>

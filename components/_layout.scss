@@ -4,17 +4,13 @@
 // layout.scss
 //---------------------------------------------------
 
-.header,
+// header样式在_header.scss中定义
+
 .footer,
 .header-sub{
     position: fixed;
     left: 0;
     right: 0;
-}
-.header {
-    top: 0;
-    height: $barHeight;
-    z-index: $zIndexHeader;
 }
 .footer {
     bottom: 0;

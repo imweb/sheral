@@ -4,7 +4,11 @@
 // search.scss
 //-----------------------------------------------------
 
-$searchRadius:    15px !default;
+$searchRadius:               15px !default;
+
+$searchBlockCenterSwitch:    true !default;
+$searchBlockCancelSwitch:    true !default;
+
 
 .search-block {
     background-color: $colorF;
@@ -35,22 +39,6 @@ $searchRadius:    15px !default;
         top: 7px;
         fill: #999;
     }
-}
-
-.search-block--center{
-    .search-ele-wrap{
-        background: #fff;
-        text-align: center;
-        border-radius: $searchRadius;
-        color: $colorPlaceholder;
-    }
-    .icon-search{
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        width: 20px;
-        text-align: center;
-    }
     .btn-voice{
         position: absolute;
         right: 0;
@@ -64,18 +52,38 @@ $searchRadius:    15px !default;
     }
 }
 
-.search-block--cancel {
-    .search-ele-wrap {
-        position: relative;
-        margin-right: 40px;
+@if $searchBlockCenterSwitch{
+    .search-block--center{
+        .search-ele-wrap{
+            background: #fff;
+            text-align: center;
+            border-radius: $searchRadius;
+            color: $colorPlaceholder;
+        }
+        .icon-search{
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            text-align: center;
+        }
     }
-    .search-cancel {
-        line-height: $barHeight;
-        padding: 0 10px;
-        color: $primary;
-        position: absolute;
-        right: 0;
-        top: 0;
-        cursor: pointer;
+}
+
+@if $searchBlockCancelSwitch{
+    .search-block--cancel {
+        .search-ele-wrap {
+            position: relative;
+            margin-right: 40px;
+        }
+        .search-cancel {
+            line-height: $barHeight;
+            padding: 0 10px;
+            color: $primary;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
     }
 }

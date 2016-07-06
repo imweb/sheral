@@ -5,7 +5,8 @@
 //---------------------------------------------------
 
 $formLabelWidth: 80px !default;
-$enableFlex: true !default;
+
+$formNoLabelSwitch: true !default;
 
 .f-text,
 .f-textarea {
@@ -64,17 +65,19 @@ $enableFlex: true !default;
     }
     .icon-v-right{
         width: 30px;
-        height: 30px;
-        margin-left: -10px;
+        height: $barHeight;
         color: #ccc;
     }
 }
-.form--no-label{
-    .f-text,
-    .f-textarea {
-        border: 0 none;
-        padding-left: 0;
-        padding-right: 10px;
+
+@if $formNoLabelSwitch {
+    .form--no-label{
+        .f-text,
+        .f-textarea {
+            border: 0 none;
+            padding-left: 0;
+            padding-right: 10px;
+        }
     }
 }
 

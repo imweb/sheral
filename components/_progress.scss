@@ -4,107 +4,112 @@
 // progress.scss
 //-----------------------------------------------------
 
-$circleSize:         100px !default;
-$circleTrackSize:    4px !default;
-$circleTrackBg:      $colorBorder !default;
-$circleBorderBg:     $primary !default;
-$circleBottom:       false !default;
+$circleProgressSwitch:             true !default;
+$circleProgressSize:               100px !default;
+$circleProgressTrackSize:          4px !default;
+$circleProgressTrackBg:            $colorBorder !default;
+$circleProgressBorderBg:           $primary !default;
+$circleProgressBottom:             false !default;
 
-$barProgressBg:      $colorBorder $primary !default;
-$barProgressHeight:  2px !default;
-$barProgressRadius:  2px !default;
+$barProgressSwitch:                true !default;
+$barProgressBg:                    $colorBorder $primary !default;
+$barProgressHeight:                2px !default;
+$barProgressRadius:                2px !default;
 
-
-.circle-progress{
-  position: relative;
-  width: $circleSize;
-  height: $circleSize;
-  border: $circleTrackSize solid $circleTrackBg;
-  border-radius: 50%;
-  box-sizing: border-box;
-  .progress-num{
-    @include center-translate(both);
-  }
-  .circle-left,
-  .circle-right{
-    width: $circleSize / 2;
-    height: $circleSize;
-    position: absolute;
-    top: -$circleTrackSize;
-    overflow: hidden;
-  }
-  .circle-left{
-    left: -$circleTrackSize;
-  }
-  .circle-right{
-    right: -$circleTrackSize;
-  }
-  .right-inner,
-  .left-inner{
-    width: $circleSize;
-    height: $circleSize;
-    position: absolute;
-    right: 0;
-    top: 0;
+@if $circleProgressSwitch{
+  .circle-progress{
+    position: relative;
+    width: $circleProgressSize;
+    height: $circleProgressSize;
+    border: $circleProgressTrackSize solid $circleProgressTrackBg;
     border-radius: 50%;
-    border: $circleTrackSize solid $circleBorderBg;
     box-sizing: border-box;
-    transition: transform 0.5s linear;
-    // transform: rotate(-180deg);
-  }
-  .right-inner{
-    right: 0;
-    clip:rect(0, $circleSize / 2, $circleSize, 0);
-  }
-  .left-inner{
-    left: 0;
-    transition-delay: 0.5s;
-    clip:rect(0, $circleSize, $circleSize, $circleSize / 2);
-    if $circleBottom{
-      transition: transform 0.4s 0.45s linear;
+    .progress-num{
+      @include center-translate(both);
     }
-  }
-  @if $circleBottom{
-    .circle-bottom{
-      width: 100px;
-      height: 50px;
+    .circle-left,
+    .circle-right{
+      width: $circleProgressSize / 2;
+      height: $circleProgressSize;
       position: absolute;
-      left: 0;
-      top: 50px;
+      top: -$circleProgressTrackSize;
       overflow: hidden;
-      .bottom-inner{
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        border-radius: 50%;
-        border: $circleBorder;
-        box-sizing: border-box;
-        clip:rect(0, $circleSize, $circleSize / 2, 0);
-        transition: transform .4s .25s linear; 
+    }
+    .circle-left{
+      left: -$circleProgressTrackSize;
+    }
+    .circle-right{
+      right: -$circleProgressTrackSize;
+    }
+    .right-inner,
+    .left-inner{
+      width: $circleProgressSize;
+      height: $circleProgressSize;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 50%;
+      border: $circleProgressTrackSize solid $circleProgressBorderBg;
+      box-sizing: border-box;
+      transition: transform 0.5s linear;
+      // transform: rotate(-180deg);
+    }
+    .right-inner{
+      right: 0;
+      clip:rect(0, $circleProgressSize / 2, $circleProgressSize, 0);
+    }
+    .left-inner{
+      left: 0;
+      transition-delay: 0.5s;
+      clip:rect(0, $circleProgressSize, $circleProgressSize, $circleProgressSize / 2);
+      if $circleProgressBottom{
+        transition: transform 0.4s 0.45s linear;
       }
     }
-  } 
+    @if $circleProgressBottom{
+      .circle-bottom{
+        width: 100px;
+        height: 50px;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        overflow: hidden;
+        .bottom-inner{
+          width: 100px;
+          height: 100px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          border-radius: 50%;
+          border: $circleBorder;
+          box-sizing: border-box;
+          clip:rect(0, $circleProgressSize, $circleProgressSize / 2, 0);
+          transition: transform .4s .25s linear; 
+        }
+      }
+    } 
+  }
 }
 
-.bar-progress{
-  position: relative;
-  height: $barProgressHeight;
-  background: nth($barProgressBg, 1);
-  overflow: hidden;
-  @if $barProgressRadius {
-    border-radius: $barProgressRadius;
-  }
-  .progress-percent{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: nth($barProgressBg, 2);
+@if $barProgressSwitch{
+  .bar-progress{
+    position: relative;
+    height: $barProgressHeight;
+    background: nth($barProgressBg, 1);
+    overflow: hidden;
     @if $barProgressRadius {
       border-radius: $barProgressRadius;
+    }
+    .progress-percent{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: nth($barProgressBg, 2);
+      @if $barProgressRadius {
+        border-radius: $barProgressRadius;
+      }
     }
   }
 }

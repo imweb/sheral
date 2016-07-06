@@ -60,7 +60,7 @@ $(function() {
 		});
 	})
 
-	$('.js-scroll-select-btn').on('click', function(){
+	$('.js-picker-btn').on('click', function(){
 		$('.panel-wrap')
 		.addClass('active')
 		.on('click', function(){

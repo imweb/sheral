@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+$articleLineGap:       10px !default;
+$articleImgBorder:     true !default;
+
+.article{
+	padding: 20px 10px;
+	background: #fff;
+	.tt-2,
+	.tt-3{
+		line-height: 1.3;
+		margin-bottom: $articleLineGap;
+		font-weight: bold;
+	}
+	p{
+		margin-bottom: $articleLineGap;
+	}
+	.article-img{
+		max-width: 100%;
+		margin-bottom: $articleLineGap;
+		@if $articleImgBorder{
+			border: 1px solid $colorBorder;
+			padding: 2px;
+		}
+	}
+	.list-disc,
+	.list-decimal{
+		list-style: disc;
+		margin-left: 16px;
+		margin-bottom: $articleLineGap;
+	}
+	.list-decimal{
+		list-style: decimal;
+	}
+}

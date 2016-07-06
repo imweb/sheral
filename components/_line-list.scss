@@ -4,6 +4,11 @@
 // line-list.scss
 //-----------------------------------------------------
 
+$lineSelectSwitch:         true !default; // 单选
+$lineMutilSelectSwitch:    true !default; // 多选
+
+$lineVIconSwitch:          false !default; // icon v
+
 .line-item {
     @extend %bar-line;
     .item-tt {
@@ -23,75 +28,19 @@
         margin-top: 10px;
     }
 }
-.line-list--h-border {
-    position: relative;
-    &::before {
-        content: "";
-        @include retina-one-px-border(top);
-        z-index: 1;
-    }
-    &::after {
-        content: "";
-        @include retina-one-px-border(bottom);
-    }
-}
-
 .line-list--center {
     text-align: center;
 }
 .line-list--indent {
+    @extend %border-tb;
     .line-item::before {
         left: 10px;
-    }
-}
-.line-list--select {
-    .line-item {
-        padding-right: 30px;
-        &.active {
-            color: $primary;
-            &::after {
-                content: "";
-                display: block;
-                width: 14px;
-                height: 8px;
-                border-bottom: 2px solid currentColor;
-                border-left: 2px solid currentColor;
-                transform: rotate(-52deg) translate(0, -50%);
-                box-sizing: border-box;
-                position: absolute;
-                top: 50%;
-                right: 8px;
-                margin-top: -4px;
-            }
-        }
-    }
-}
-.line-list--multi-select {
-    .active{
-        color: $primary;
-        .icon-checkbox{
-            color: $primary;
-        }
     }
 }
 .line-list--after-v {
     .line-item {
         padding-right: 30px;
         @extend %item-v-right;        
-    }
-}
-.line-list--icon-v {
-    .line-item {
-        padding-right: 25px;        
-    }
-    .icon-v-right {
-        position: absolute;
-        width: 30px;
-        height: 100%;
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%);
-        color: #ccc;
     }
 }
 .line-list--flex {
@@ -122,6 +71,58 @@
         .remind-num {
             position: static;
             line-height: 1.5;
+        }
+    }
+}
+
+@if $lineSelectSwitch{
+    .line-list--select {
+        .line-item {
+            padding-right: 30px;
+            &.active {
+                color: $primary;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 14px;
+                    height: 8px;
+                    border-bottom: 2px solid currentColor;
+                    border-left: 2px solid currentColor;
+                    transform: rotate(-52deg) translate(0, -50%);
+                    box-sizing: border-box;
+                    position: absolute;
+                    top: 50%;
+                    right: 8px;
+                    margin-top: -4px;
+                }
+            }
+        }
+    }
+}
+@if $lineMutilSelectSwitch{
+    .line-list--multi-select {
+        .active{
+            color: $primary;
+            .icon-checkbox{
+                color: $primary;
+            }
+        }
+    }
+}
+
+@if $lineVIconSwitch{
+    .line-list--icon-v {
+        .line-item {
+            padding-right: 25px;        
+        }
+        .icon-v-right {
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            color: #ccc;
         }
     }
 }

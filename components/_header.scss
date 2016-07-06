@@ -4,16 +4,24 @@
 // header.scss
 //---------------------------------------------------
 
-$headerHeight:        $barHeight !default;
-$headerBgColor:       $primary !default;
-$headerTextColor:     #fff !default;
+$headerHeight:           $barHeight !default;
+$headerBgColor:          $primary !default;
+$headerTextColor:        #fff !default;
+
+$headerTabTtSwitch:     true !default;
+$headerMutilTtSwitch:   true !default;
 
 .header {
-    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $headerHeight;
     line-height: $headerHeight;
     text-align: center;
     background-color: $headerBgColor;
     color: $headerTextColor;
+    z-index: $zIndexHeader;
 
     .header-left{
         float: left;
@@ -34,7 +42,7 @@ $headerTextColor:     #fff !default;
         width: $headerHeight;
         height: $headerHeight;
         float: left;
-        text-align: center;
+        position: relative;
     }
     .header-btn {
         padding: 0 10px;
@@ -50,6 +58,7 @@ $headerTextColor:     #fff !default;
         }
     }
     .icon-svg{
+        @include center-translate(both);
         fill: $headerTextColor;
     }
 
@@ -74,60 +83,44 @@ $headerTextColor:     #fff !default;
             display: block;
         }
     }
-    .page-mutil-tt {
-        font-size: 14px;
-        line-height: 19px;
-        padding-top: 4px;
-        box-sizing: border-box;
-        overflow : hidden;    
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 2;
-        height: $headerHeight;
+    @if $headerMutilTtSwitch {
+        .page-mutil-tt {
+            font-size: 14px;
+            line-height: 19px;
+            padding-top: 4px;
+            box-sizing: border-box;
+            overflow : hidden;    
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            height: $headerHeight;
+        }
     }
-    .page-tabs-tt {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0,0,0,.2);
-        border-radius: 5px;
-        line-height: 30px;
-        padding: 1px;
-        font-size: 14px;
-        .tt-option {
-            float: left;
-            padding: 0 15px;
-            color: #fff;
-            &.active {
-                background-color: #fff;
-                @if lightness($headerBgColor) > 40% {
+    @if $headerTabTtSwitch{
+        .page-tabs-tt {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,.2);
+            border-radius: 5px;
+            line-height: 30px;
+            padding: 1px;
+            font-size: 14px;
+            .tt-option {
+                float: left;
+                padding: 0 15px;
+                color: $headerTextColor;
+                &.active {
+                    background-color: $headerTextColor;
                     color: $headerBgColor;
                 }
-                @else {
-                    color: $headerTextColor;
+                &:first-of-type{
+                    border-radius: 5px 0 0 5px;
+                }
+                &:last-of-type {
+                    border-radius: 0 5px 5px 0;
                 }
             }
-            &:first-of-type{
-                border-radius: 5px 0 0 5px;
-            }
-            &:last-of-type {
-                border-radius: 0 5px 5px 0;
-            }
         }
-    }
-}
-
-.header--white{
-    background: #fff;
-    color: $primary;
-    
-    .header-icon,
-    .header-btn{
-        &:hover {
-            background-color:transparent;
-        }
-    }
-    .icon-svg{
-        fill: $primary;
     }
 }

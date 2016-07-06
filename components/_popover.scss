@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
 //---------------------------------------------------
-// popup.scss
+// popover.scss
 //---------------------------------------------------
 
 
-$popupBg:            darken($primary, 5%) !default;
-$popupTextColor:     #fff !default;
-$popupRadius:        false !default;
-$popupTriangle:      true !default;
+$popoverBg:            darken($primary, 5%) !default;
+$popoverTextColor:     #fff !default;
+$popoverRadius:        false !default;
+$popoverTriangle:      true !default;
 
-.popup{
+.popover{
 	position: fixed;
-	color: $popupTextColor;
+	color: $popoverTextColor;
 	z-index: $zIndexOverlay;
 	.line-list{
-		background: $popupBg;
-		@if $popupRadius{
-			border-radius: $popupRadius;
+		background: $popoverBg;
+		@if $popoverRadius{
+			border-radius: $popoverRadius;
 		}
 	}
 	.line-item{
@@ -27,22 +27,22 @@ $popupTriangle:      true !default;
 		align-items: center;
 		.item-icon{
 			margin-right: 5px;
-			fill: $popupTextColor;
+			fill: $popoverTextColor;
 		}
 	}
 }
 
-.popup--header-more{
+.popover--header-more{
 	top: $barHeight;
 	right: 5px;
 
-	@if $popupTriangle{
+	@if $popoverTriangle{
 		padding-top: 7px;
-		.popup-triangle{
+		.popover-triangle{
 			position: absolute;
 			top: 1px;
 			right: 10px;
-			@include triangle(top, 6px, $popupBg);
+			@include triangle(top, 6px, $popoverBg);
 		}
 	}
 }

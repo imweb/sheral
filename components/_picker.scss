@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 //-----------------------------------------------------
-// scroll-select.scss
+// picker.scss
 //-----------------------------------------------------
 
-$scrollSelectHeight:             180px !default;
+$pickerHeight:             180px !default;
 
-.panel--scroll-select{
+.panel--picker{
     display: none;
     .active &{
         display: block;
@@ -22,12 +22,12 @@ $scrollSelectHeight:             180px !default;
     }
 }
 
-.scroll-select-group,
-.scroll-select{
+.picker-list,
+.picker-item{
     overflow: hidden;
     position: relative;   
 }
-// .scroll-select {
+// .picker {
 //     background-color: #fff;
 //     font-size: 16px;
 //     .select-list {
@@ -47,10 +47,9 @@ $scrollSelectHeight:             180px !default;
 //         }
 //     }
 // }
-.scroll-select {
+.picker-item {
     background-color: #fff;
-    height: $scrollSelectHeight;
-    font-size: 16px;
+    height: $pickerHeight;
     box-sizing: border-box;
     .select-list {
         text-align: center;
@@ -79,7 +78,7 @@ $scrollSelectHeight:             180px !default;
         margin-top: 18px;
     }
 }
-.select-mask {
+.picker-mask {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,11 +87,11 @@ $scrollSelectHeight:             180px !default;
     pointer-events:none;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%);
 }
-.scroll-select-group{
+.picker-list{
     position: relative;
-    @include equal-flex(scroll-select);
+    @include equal-flex(picker-item);
 }
 
-.scroll-select-tips{
+.picker-tips{
     text-align: center;
 }
