@@ -1,12 +1,6 @@
-// document.addEventListener('DOMContentLoaded', function(){
-// 	var Back = document.querySelectorAll('.js-back')[0];
-// 	Back.addEventListener('click', function(){
-// 		window.location.href = '/' ;
-// 	})
 
-// 	// toast
 
-// })
+// 请忽略js，粗糙的为了简单的演示使用
 
 $(function() {
 	$('.js-back').on('click', function() {
@@ -17,10 +11,65 @@ $(function() {
 	// })
 	$('.fixed-quick-tool').click(function(){
 		$(this).toggleClass('active');
+	});
+
+	$('.icon-switch').click(function(){
+		$(this).toggleClass('active');
 	})
-	
+
+	$('.icon-checkbox').add('.icon-radio').click(function(){
+		if($(this).hasClass('disabled')){
+			return;
+		} 
+		$(this).toggleClass('active');
+	})
+
+	$('.line-list--select').on('click', '.line-item', function(){
+		$(this).siblings('.line-item').removeClass('active');
+		$(this).toggleClass('active');
+	})
+	$('.line-list--multi-select').on('click', '.line-item', function(){
+		$(this).toggleClass('active');
+	})
+
+	$('.js-toast-btn').on('click', function(){
+		var $toastWrap = $('.toast-wrap');
+		var index = $(this).index();
+		console.log(index);
+		$toastWrap.removeClass('active').eq(index).addClass('active');
+		setTimeout(function(){
+			$toastWrap.removeClass('active')
+		},2000)
+	})
+
+	$('.js-dialog-btn').on('click', function(){
+		var $dialogWrap = $('.dialog-wrap');
+		var index = $(this).index();
+		console.log(index);
+		$dialogWrap.removeClass('active').eq(index).addClass('active')
+		.on('click',function(){
+			$(this).removeClass('active');
+		});
+	})
+
+	$('.js-actionsheet-btn').on('click', function(){
+		$('.panel-wrap')
+		.addClass('active')
+		.on('click', function(){
+			$(this).removeClass('active');
+		});
+	})
+
+	$('.js-picker-btn').on('click', function(){
+		$('.panel-wrap')
+		.addClass('active')
+		.on('click', function(){
+			$(this).removeClass('active');
+		});
+	})	
 })
 
+// 圆形进度条
 $(window).load(function(){
 	var $circleProgress = $('.circle-progress'),
 		deg1 = 60,

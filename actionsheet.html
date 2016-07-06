@@ -9,6 +9,9 @@
 	<title>actionsheet</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <style type="text/css">
+        
+    </style>
 </head>
 <body>
 <header class="header">
@@ -18,6 +21,7 @@
 <main id="pages" class="page-wrap">
     <div class="page">    
         <article class="article">
+            <p class="btn-outline full-width js-actionsheet-btn">actionsheet</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis nulla, ea ex quas ut pariatur totam hic ducimus nostrum, repudiandae. Id ea asperiores commodi sapiente perspiciatis, obcaecati sint natus.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo minima corporis nesciunt similique eum tenetur, a error odit dicta! Quos atque odit quibusdam in deserunt sed temporibus officiis vel sit.</p>
             <p>Sit rem reiciendis, nobis, id consequatur saepe quam excepturi non commodi cum omnis velit iusto et dolores totam consequuntur, nisi quisquam cumque maiores tempora labore incidunt? Ex odit sapiente nam!</p>
@@ -27,16 +31,18 @@
         </article> 
     </div>
 </main>
-<div class="overlay active"></div>
-<section class="bottom-panel panel--actionsheet">
-    <ul class="line-list line-list--center">
-        <li class="line-item">action 1</li>
-        <li class="line-item">action 2</li>
-        <li class="line-item">action 3</li>
-    </ul>
-    <ul class="line-list line-list--center">
-        <li class="line-item">取消</li>
-    </ul>
+<section class="panel-wrap">
+    <div class="overlay"></div>
+    <section class="bottom-panel panel--actionsheet">
+        <ul class="line-list line-list--center">
+            <li class="line-item">action 1</li>
+            <li class="line-item">action 2</li>
+            <li class="line-item">action 3</li>
+        </ul>
+        <ul class="line-list line-list--center">
+            <li class="line-item">取消</li>
+        </ul>
+    </section>
 </section>
 </body>
 </html>

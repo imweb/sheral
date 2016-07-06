@@ -6,27 +6,23 @@
 	
 	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
-	<title>toast</title>
+	<title>popover</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 <header class="header">
     <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
-    <h1 class="page-tt">toast</h1>
+    <div class="header-right">
+        <i class="header-icon icon-dots"></i>
+    </div>
+    <h1 class="page-tt">popover</h1>
 </header>
 <main id="pages" class="page-wrap">
     <div class="page">
         <article class="article">
-            
-            <p>toast 2s后自动消失，在此过程中点击无效</p>
-            <div>
-                <p class="btn-outline full-width js-toast-btn">文字 toast</p>
-                <p class="btn-outline full-width js-toast-btn">图标 + 文字 toast</p>
-                <p class="btn-outline full-width js-toast-btn">loading toast</p>
-                <p class="btn-outline full-width js-toast-btn">带关闭及提示loading toast</p>
-            </div>
-            
+            <span class="btn-default js-toast-btn">toast 1</span>
+            <span class="btn-default">toast 2</span>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi blanditiis nulla, ea ex quas ut pariatur totam hic ducimus nostrum, repudiandae. Id ea asperiores commodi sapiente perspiciatis, obcaecati sint natus.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo minima corporis nesciunt similique eum tenetur, a error odit dicta! Quos atque odit quibusdam in deserunt sed temporibus officiis vel sit.</p>
             <p>Sit rem reiciendis, nobis, id consequatur saepe quam excepturi non commodi cum omnis velit iusto et dolores totam consequuntur, nisi quisquam cumque maiores tempora labore incidunt? Ex odit sapiente nam!</p>
@@ -37,28 +33,25 @@
     </div>
 </main>
 
-<section class="toast-wrap">
-    <div class="toast">
-        <p class="toast-txt">网络连接超时，请稍后重试</p>
-    </div>
-</section>
-<section class="toast-wrap">
-    <div class="toast">
-        <i class="toast-icon icon-right"></i>
-        <p class="toast-txt">干得漂亮</p>
-    </div>
-</section>
-<section class="toast-wrap">
-    <div class="toast toast--loading">
-        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
-    </div>
-</section>
-<section class="toast-wrap">
-    <div class="toast toast--loading has-close">
-        <svg class="icon-svg icon-loading"><use xlink:href="images/icons.svg#icon-loading"></use></svg>
-        <p class="toast-text">提交中...</p>
-        <i class="icon-close">&times;</i>
-    </div>
+<div class="overlay overlay--no-header overlay--transparent active"></div>
+<section class="popover popover--header-more">
+    <i class="popover-triangle"></i>
+    <ul class="line-list">
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-email"><use xlink:href="images/icons.svg#icon-email"></use></svg>
+            最新消息
+        </li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-user"><use xlink:href="images/icons.svg#icon-user"></use></svg>
+            我的中心
+        </li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-setting"><use xlink:href="images/icons.svg#icon-setting"></use></svg>
+            设置</li>
+        <li class="line-item">
+            <svg class="item-icon icon-svg icon-logout"><use xlink:href="images/icons.svg#icon-logout"></use></svg>
+            退出</li>
+    </ul>
 </section>
 </body>
 </html>
