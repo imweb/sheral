@@ -21,6 +21,9 @@ $colorBg:                        #f5f5f5;
 	font-size: 20px;
 }
 
+@include animation-fade-in;
+@include animation-fade-out;
+
 // btn
 //-------------------------------------------------
 @import "../../components/btn";
@@ -128,4 +131,8 @@ $colorBg:                        #f5f5f5;
 // article
 //-------------------------------------------------
 @import "../../components/article";
+
+// line-equal
+//-------------------------------------------------
+@import "../../components/line-equal";
 
