@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<meta name="format-detection" content="telphone=no,email=no"/>
+	<link rel="stylesheet" href="css/global.css">
+	<title>line equal</title>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <style type="text/css">
+        .equal--item .item-icon{
+            display: flex;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            color: #fff;
+            background: #ff7800;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+        .equal--item .icon-svg{
+            fill: #fff;
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="header-left"><i class="header-icon icon-v-left js-back"></i></div>
+    <h1 class="page-tt">line equal</h1>
+</header>
+<main id="pages" class="page-wrap">
+    <div class="page">
+        <div class="content">
+            <h3 class="guide-title">line equal gap</h3>
+            
+            <div class="line-equal-list equal--gap">
+                <div class="line-equal-item"><img src="http://placehold.it/100" alt=""></div>
+                <div class="line-equal-item"><img src="http://placehold.it/100" alt=""></div>
+                <div class="line-equal-item"><img src="http://placehold.it/100" alt=""></div>
+            </div>
+
+            <h3 class="guide-title">line equal item</h3>
+
+            <div class="line-equal-list equal--item">
+                <div class="line-equal-item">
+                    <span class="item-icon">
+                        <svg class="icon-svg icon-phone"><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+                    </span>
+                </div>
+                <div class="line-equal-item">
+                    <span class="item-icon">
+                        <svg class="icon-svg icon-email"><use xlink:href="images/icons.svg#icon-email"></use></svg>
+                    </span>
+                </div>
+                <div class="line-equal-item">
+                    <span class="item-icon">
+                        <svg class="icon-svg icon-comment"><use xlink:href="images/icons.svg#icon-comment"></use></svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+</main>
+</body>
+</html>

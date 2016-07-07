@@ -4,9 +4,9 @@
 // card list
 //-----------------------------------------------------
 
-$cardFlexSwitch:       false !default;
-$cardGap:              10px !default;
-$carLineNum:           2 !default; // 2 或 3
+$cardFlexSwitch:       false !default; // 默认使用float布局
+$cardGap:              10px !default; // 默认间距10px
+$carLineNum:           2 !default; // 目前只支持2 或 3 等分
 
 $cardBorderSwitch:     true !default;
 

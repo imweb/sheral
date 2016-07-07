@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// line equal
+//-----------------------------------------------------
+
+$lineEqualItemWidth:           60px !default;
+
+.equal--gap{
+	@include line-equal-gap($children: line-equal-item);
+}
+
+.equal--item{
+	@include line-equal-item;
+	.line-equal-item{
+		width: $lineEqualItemWidth;
+	}
+}
