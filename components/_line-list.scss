@@ -11,16 +11,6 @@ $lineVIconSwitch:          false !default; // icon v
 
 .line-item {
     @extend %bar-line;
-    .item-tt {
-        line-height: 1.3;
-        font-size: 16px;
-        margin-bottom: 4px;
-    }
-    .item-txt {
-        line-height: 1.5;
-        color: #999;
-        font-size: 12px;
-    }
 }
 .line-list {
     background: #fff;
@@ -49,15 +39,27 @@ $lineVIconSwitch:          false !default; // icon v
         align-items: center;
         padding-right: 0;
         .item-icon,
+        .item-img,
         .icon-switch,
         .remind-num,
         .item-append{
             margin-right: 10px;
         }
+        .item-tt,
         .item-bd {
             flex: 1;
             margin-right: 10px;
             width: 1%;
+        }
+        .bd-tt {
+            line-height: 1.3;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        .bd-txt {
+            line-height: 1.5;
+            color: #999;
+            font-size: 12px;
         }
         .item-append{
             color: $color9;
