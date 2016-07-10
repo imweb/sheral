@@ -26,8 +26,7 @@ $quickToolPos:            right 10px 80px !default;
     .tool-icon{
         width: $toolIconSize;
         height: $toolIconSize;
-        @include center-translate;
-        fill: #fff;       
+        @include center-translate;      
     }
 }
 
@@ -65,9 +64,6 @@ $quickToolPos:            right 10px 80px !default;
             opacity: 0;
             transition: opacity .3s linear, transform .3s $timingFunction;
             @include center-flex(both);
-        }
-        .item-icon{
-            fill: #fff;
         }
         &.active{
             .tool-switch{

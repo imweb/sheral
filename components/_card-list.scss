@@ -6,6 +6,7 @@
 
 $cardFlexSwitch:       false !default; // 默认使用float布局
 $cardGap:              10px !default; // 默认间距10px
+$cardImgRation:        1 !default; // 图片比例
 $carLineNum:           2 !default; // 目前只支持2 或 3 等分
 
 $cardBorderSwitch:     true !default;
@@ -28,7 +29,10 @@ $cardGapSwitch:        true !default;
 			float: left;
 		}
 
-		.item-img {
+		.item-img-wrap{
+			@include object-wrap(100%, '.item-img');
+		}
+		.item-img{
 			width: 100%;
 		}
 		.item-tt {

@@ -89,7 +89,7 @@ $pickerHeight:             180px !default;
 }
 .picker-list{
     position: relative;
-    @include equal-flex(picker-item);
+    @include equal-flex('.picker-item');
 }
 
 .picker-tips{

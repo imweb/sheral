@@ -4,20 +4,23 @@
 // form.scss
 //---------------------------------------------------
 
-$formLabelWidth: 80px !default;
+$formLabelWidth: 90px !default;
 
 $formNoLabelSwitch: true !default;
+
 
 .f-text,
 .f-textarea {
     width: 100%;
     padding: 5px;
     border: 1px solid $colorBorder;
-    border-radius: $radiusBase;
 }
 .f-text{
     height: $barHeight;
     padding: 7px 5px;
+    &.f-text--right-icon{
+        padding-right: 30px;
+    }
 }
 .f-textarea {
     height: 100px;
@@ -31,29 +34,26 @@ $formNoLabelSwitch: true !default;
 .form-item{
     display: flex;
     align-items: center;
-    @extend %bar-line;
+    position: relative;
     line-height: $barHeight;
-    min-height: $barHeight;
-    padding: 0 0 0 10px;
-    &:active, &:hover {
-        background-color: #fff;
+    overflow: hidden;
+    &:not(:first-of-type)::before {
+        content: "";
+        @include retina-one-px-border;
     }
+
     .item-label{
         width: $formLabelWidth;
+        padding-left: 10px;
     }
     .item-field{
         flex: 1;
         width: 1%;
         .f-text{
             display: block;
-            height: $barHeight;
-            padding: 7px 5px;
             border: 0 none;
             width: 100%;
             box-sizing: border-box;
-            &.f-text--right-icon{
-                padding-right: 30px;
-            }
         }
         .icon-input-clear{
             height: $barHeight;
@@ -62,8 +62,15 @@ $formNoLabelSwitch: true !default;
     .item-append{
         margin-right: 10px;
         color: $color9;
+        + .icon-v-right{
+            margin-left: -10px;
+        }
+    }
+    .img-captcha{
+        margin-left: 10px;
     }
     .icon-v-right{
+        display: block;
         width: 30px;
         height: $barHeight;
         color: #ccc;
@@ -75,7 +82,7 @@ $formNoLabelSwitch: true !default;
         .f-text,
         .f-textarea {
             border: 0 none;
-            padding-left: 0;
+            padding-left: 10px;
             padding-right: 10px;
         }
     }

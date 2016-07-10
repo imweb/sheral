@@ -37,7 +37,6 @@ $searchBlockCancelSwitch:    true !default;
         position: absolute;
         right: 5px;
         top: 7px;
-        fill: #999;
     }
     .btn-voice{
         position: absolute;
@@ -46,9 +45,6 @@ $searchBlockCancelSwitch:    true !default;
         height: 30px;
         padding-top: 7px;
         top: 0;
-        .icon-svg{
-            fill: $colorPlaceholder;
-        }
     }
 }
 

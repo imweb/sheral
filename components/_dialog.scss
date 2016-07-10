@@ -41,7 +41,7 @@
         overflow: hidden;
         text-align: center;
         line-height: $barHeight;
-        @include equal-flex(ft-btn);
+        @include equal-flex('.ft-btn');
         button{
             line-height: normal;
             height: $barHeight;

@@ -21,7 +21,7 @@ $navBtnColorActive:   #fff !default;
 
 // nav list
 .nav-list{
-    @include equal-flex(nav-item);
+    @include equal-flex('.nav-item');
     text-align: center; 
 }
 
@@ -47,7 +47,6 @@ $navBtnColorActive:   #fff !default;
         top: 5px;
         left: 50%;
         margin-left: -10px;
-        fill: currentColor;
     }
     .remind-circle,
     .remind-num{
