@@ -30,7 +30,7 @@ $cardGapSwitch:        true !default;
 		}
 
 		.item-img-wrap{
-			@include object-wrap(100%, '.item-img');
+			@include object-wrap(percentage($cardImgRation), '.item-img');
 		}
 		.item-img{
 			width: 100%;

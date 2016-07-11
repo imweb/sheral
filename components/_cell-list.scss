@@ -13,7 +13,6 @@ $cellSquareSwitch:  true !default; // 正方形格子
 .cell-list{
 	background: #fff;
 	position: relative;
-	margin-bottom: 20px;
 	overflow: hidden;
 	&::before{
 		content: "";
