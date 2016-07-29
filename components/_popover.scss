@@ -28,7 +28,12 @@ $popoverTriangle:      true !default;
 		.item-icon{
 			margin-right: 5px;
 		}
-	}
+		@if $activeStateSwitch{
+			&:hover,&:active{
+				background: darken($popoverBg, 5%);
+			}
+		}
+	} 
 }
 
 .popover--header-more{

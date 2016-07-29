@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------
+// full-screen-view.scss
+//-----------------------------------------------------
+
+.full-screen-view{
+	@include fixed;
+	bottom: 0;
+	z-index: $zIndexOverlay + 5;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	@include center-flex;
+}
