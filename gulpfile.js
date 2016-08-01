@@ -14,7 +14,7 @@ gulp.task('connect', function() {
 gulp.task('sass', function () {
  return gulp.src(['./components/*.scss', './demo/sass/*.scss'])
    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-   .pipe(autoprefixer({ browsers: ['last 3 versions', 'IE 9'], cascade: false }))
+   .pipe(autoprefixer({ browsers: ['last 3 versions', 'IE 9', 'Android >= 4.0'], cascade: false }))
    .pipe(gulp.dest('./demo/css'));
 });
 

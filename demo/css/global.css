@@ -14,9 +14,11 @@
 }
 
 .justify, .panel--picker .panel-hd {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -594,6 +596,7 @@ i {
   left: -50px;
   background-color: #099FDE;
   border-radius: 15px;
+  -webkit-transition: left 0.2s ease 0s;
   transition: left 0.2s ease 0s;
   z-index: 2;
 }
@@ -607,6 +610,7 @@ i {
   position: absolute;
   left: 2px;
   top: 2px;
+  -webkit-transition: left 0.2s ease 0s;
   transition: left 0.2s ease 0s;
   z-index: 3;
 }
@@ -1221,6 +1225,7 @@ i {
 }
 
 .nav-list {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1228,6 +1233,7 @@ i {
 }
 
 .nav-list .nav-item {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1339,9 +1345,11 @@ i {
 }
 
 .line-list--flex .line-item {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1358,6 +1366,7 @@ i {
 
 .line-list--flex .line-item .item-tt,
 .line-list--flex .line-item .item-bd {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1432,23 +1441,29 @@ i {
   right: 0;
   top: 44px;
   bottom: 0;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   z-index: 4000;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .toast-wrap.active {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1508,23 +1523,29 @@ i {
   right: 0;
   top: 0;
   bottom: 0;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   z-index: 4000;
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .dialog-wrap.active {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1559,12 +1580,14 @@ i {
   overflow: hidden;
   text-align: center;
   line-height: 44px;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .dialog .dialog-ft .ft-btn {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1625,6 +1648,8 @@ i {
 }
 
 .dialog .dialog-ft.ft--full {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
@@ -1661,9 +1686,11 @@ i {
 .popover .line-item {
   line-height: 36px;
   padding: 0 10px;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -1945,6 +1972,7 @@ i {
 }
 
 .tool-bar {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1954,6 +1982,7 @@ i {
 }
 
 .tool-bar li {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -1987,6 +2016,7 @@ i {
   display: block;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
@@ -2015,15 +2045,19 @@ i {
   background: #007aff;
   border-radius: 50%;
   opacity: 0;
+  -webkit-transition: opacity 0.3s linear, -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: opacity 0.3s linear, -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2114,9 +2148,11 @@ i {
 }
 
 .form-item {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
@@ -2145,6 +2181,7 @@ i {
 }
 
 .form-item .item-field {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -2305,17 +2342,20 @@ i {
   height: 100%;
   width: 100%;
   pointer-events: none;
+  background: -webkit-linear-gradient(top, white 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 60%, white 100%);
   background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0) 60%, white 100%);
 }
 
 .picker-list {
   position: relative;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .picker-list .picker-item {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -2328,6 +2368,7 @@ i {
 
 .panel--filter {
   top: 44px;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2358,6 +2399,7 @@ i {
 }
 
 .filter-nav:last-of-type {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -2642,6 +2684,7 @@ input[type=range]::-webkit-media-slider-thumb {
 }
 
 .range-all {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2655,6 +2698,7 @@ input[type=range]::-webkit-media-slider-thumb {
 }
 
 .range-all .range-wrap {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -2705,6 +2749,7 @@ input[type=range]::-webkit-media-slider-thumb {
   border-radius: 50%;
   border: 4px solid #007aff;
   box-sizing: border-box;
+  -webkit-transition: -webkit-transform 0.5s linear;
   transition: -webkit-transform 0.5s linear;
   transition: transform 0.5s linear;
   transition: transform 0.5s linear, -webkit-transform 0.5s linear;
@@ -2717,11 +2762,13 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .circle-progress .left-inner {
   left: 0;
+  -webkit-transition-delay: 0.5s;
   transition-delay: 0.5s;
   clip: rect(0, 100px, 100px, 50px);
 }
 
 .circle-progress .left-inner if $circleProgressBottom {
+  -webkit-transition: -webkit-transform 0.4s 0.45s linear;
   transition: -webkit-transform 0.4s 0.45s linear;
   transition: transform 0.4s 0.45s linear;
   transition: transform 0.4s 0.45s linear, -webkit-transform 0.4s 0.45s linear;
@@ -2893,6 +2940,7 @@ input[type=range]::-webkit-media-slider-thumb {
 }
 
 .equal--gap {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2901,6 +2949,7 @@ input[type=range]::-webkit-media-slider-thumb {
 }
 
 .equal--gap .line-equal-item {
+  -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -2912,9 +2961,11 @@ input[type=range]::-webkit-media-slider-thumb {
 }
 
 .equal--item {
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -2937,12 +2988,15 @@ input[type=range]::-webkit-media-slider-thumb {
   z-index: 4005;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
