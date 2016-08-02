@@ -32,7 +32,7 @@ $cellSquareSwitch:  true !default; // 正方形格子
 			content: "";
 			@include retina-one-px-border(right);
 		}
-		&:nth-of-type($cellNum) {
+		&:nth-of-type(#{$cellNum}n) {
 			&::after{
 				display: none;
 			}
