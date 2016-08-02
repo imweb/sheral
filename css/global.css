@@ -1779,7 +1779,7 @@ i {
   right: 0;
 }
 
-.cell-list .cell-item:nth-of-type($cellNum)::after {
+.cell-list .cell-item:nth-of-type(4n)::after {
   display: none;
 }
 
