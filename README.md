@@ -36,6 +36,6 @@ gulp
 
 好友[icepy](https://github.com/icepy) 基于此UI做的 React UI [kodo](https://github.com/icepy/kodo)
 
-## Vue UI Libray
+## Vue UI Library
 
-Vue UI Libray [tauren](https://github.com/icepy/tauren)
+Vue UI [tauren](https://github.com/icepy/tauren) for wait ...
