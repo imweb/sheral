@@ -487,95 +487,6 @@ i {
   bottom: 0;
 }
 
-.icon-svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
-.icon-loading {
-  -webkit-animation: rotate 1s linear infinite;
-  animation: rotate 1s linear infinite;
-}
-
-@-webkit-keyframes rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotate {
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-.icon-checkbox, .icon-radio {
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  color: #999;
-  border: 1px solid currentColor;
-  background-color: #fff;
-  position: relative;
-  top: -1px;
-  margin-right: 5px;
-  box-sizing: border-box;
-}
-
-.icon-checkbox.active, .icon-radio.active {
-  color: #007aff;
-}
-
-.icon-checkbox.disabled, .icon-radio.disabled {
-  color: #dbdbdb;
-}
-
-.icon-checkbox::after {
-  content: "";
-  height: 4px;
-  width: 10px;
-  border: 1px solid currentColor;
-  border-width: 0 0 2px 2px;
-  position: absolute;
-  top: 1px;
-  left: 3px;
-  -webkit-transform: rotate(-52deg);
-  -ms-transform: rotate(-52deg);
-  transform: rotate(-52deg);
-}
-
-.icon-checkbox::before {
-  content: "";
-  width: 5px;
-  height: 6px;
-  background-color: #fff;
-  position: absolute;
-  right: -1px;
-  top: -1px;
-}
-
-.icon-radio {
-  border-radius: 10px;
-}
-
-.icon-radio::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
 .icon-switch {
   height: 30px;
   width: 50px;
@@ -621,6 +532,70 @@ i {
 
 .icon-switch.active::after {
   left: 22px;
+}
+
+.icon-radio, .icon-checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  color: #999;
+  border: 1px solid currentColor;
+  background-color: #fff;
+  position: relative;
+  top: -1px;
+  margin-right: 5px;
+  box-sizing: border-box;
+}
+
+.active.icon-radio, .active.icon-checkbox {
+  color: #007aff;
+}
+
+.disabled.icon-radio, .disabled.icon-checkbox {
+  color: #dbdbdb;
+}
+
+.icon-radio {
+  border-radius: 10px;
+}
+
+.icon-radio::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.icon-checkbox::after {
+  content: "";
+  height: 4px;
+  width: 10px;
+  border: 1px solid currentColor;
+  border-width: 0 0 2px 2px;
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  -webkit-transform: rotate(-52deg);
+  -ms-transform: rotate(-52deg);
+  transform: rotate(-52deg);
+}
+
+.icon-checkbox::before {
+  content: "";
+  width: 5px;
+  height: 6px;
+  background-color: #fff;
+  position: absolute;
+  right: -1px;
+  top: -1px;
 }
 
 .icon-v-right {
@@ -791,10 +766,7 @@ i {
   margin-top: -1px;
 }
 
-.icon-alert,
-.icon-info,
-.icon-question,
-.icon-ok {
+.icon-alert, .icon-info, .icon-question, .icon-ok {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -847,6 +819,31 @@ i {
   -ms-transform: translate(-50%, -50%) rotate(-52deg) scale(1.5);
   transform: translate(-50%, -50%) rotate(-52deg) scale(1.5);
   margin-top: -1px;
+}
+
+.icon-svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.icon-loading {
+  -webkit-animation: loadingRotate 1s linear infinite;
+  animation: loadingRotate 1s linear infinite;
+}
+
+@-webkit-keyframes loadingRotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loadingRotate {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .guide-title {
