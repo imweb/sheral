@@ -2976,6 +2976,46 @@ input[type=range]::-webkit-media-slider-thumb {
   width: 60px;
 }
 
+.stats-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+}
+
+.stats-list .stats-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 1%;
+}
+
+.stats-list .stats-item {
+  text-align: center;
+  position: relative;
+}
+
+.stats-list .stats-item .data-num {
+  color: #ff9500;
+  font-size: 24px;
+}
+
+.stats-list .stats-item:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 0;
+  bottom: 0;
+  -webkit-transform: scaleX(0.5);
+  -ms-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  border-left: 1px solid #dbdbdb;
+}
+
 .full-screen-view {
   position: fixed;
   left: 0;

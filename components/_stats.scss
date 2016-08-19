@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+//---------------------------------------------------
+// stats.scss
+//---------------------------------------------------
+
+$statsPadding:           10px 0 !default;
+$statsNumFontSize:       24px !default;
+$statsNumColor:          $orange !default;
+
+.stats-list{
+	@include equal-flex('.stats-item');
+	padding: $statsPadding;
+
+	.stats-item{
+		text-align: center;
+		position: relative;
+
+		.data-num{
+			color: $statsNumColor;
+			font-size: $statsNumFontSize;
+		}
+
+		&:not(:first-of-type)::before {
+		    content: "";
+		    @include retina-one-px-border(left);
+		}
+	}
+}
