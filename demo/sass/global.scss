@@ -4,9 +4,9 @@ $colorLink:                      #333;
 $colorBg:                        #f5f5f5;
 
 // 导入[sandal](https://github.com/marvin1023/sandal) 
-@import "../../sandal/core";
-@import "../../sandal/ext/helper";
-@import "../../sandal/ext/icons";
+@import "../../node_modules/sass-sandal/core";
+@import "../../node_modules/sass-sandal/ext/helper";
+@import "../../node_modules/sass-sandal/ext/icons";
 
 .guide-title{
     margin: 10px 0 0 10px;
