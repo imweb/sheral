@@ -31,11 +31,15 @@ npm install
 ```js
 gulp
 ```
+## webpack 调用
 
-## React UI Library
+```scss
+// 先调用 sandal 的 _function.scss，如需要reset样式则调用 _core.scss
+@import '~sass-sandal/_function';
+// or
+@import '~sass-sandal/_core';
 
-好友[icepy](https://github.com/icepy) 基于此UI做的 React UI [kodo](https://github.com/icepy/kodo)
-
-## Vue UI Library
-
-Vue UI [tauren](https://github.com/icepy/tauren) for wait ...
+// 再调用需要的模块
+@import '~sheral/components/_btn';
+@import '~sheral/components/_line-list';
+```

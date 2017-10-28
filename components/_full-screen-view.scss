@@ -4,11 +4,28 @@
 // full-screen-view.scss
 //-----------------------------------------------------
 
+$imgItemNums: 4 !default;
+
 .full-screen-view{
 	@include fixed;
 	bottom: 0;
 	z-index: $zIndexOverlay + 5;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-	@include center-flex;
+	overflow: hidden;
+}
+.view-img-list {
+	width: $imgItemNums * 100vw; // 根据个数设置宽度
+	display: flex;
+	align-items: center;
+	height: 100%;
+	overflow: hidden;
+
+	.view-img-item {
+		width: 100vw;
+		height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

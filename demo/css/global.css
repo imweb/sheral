@@ -15,11 +15,9 @@
 
 .justify, .panel--picker .panel-hd {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
@@ -139,7 +137,7 @@ html {
 body {
   margin: 0;
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Seogoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Microsoft YaHei UI", "Microsoft YaHei", Roboto, "Hiragino Sans GB", "Source Han Sans CN", Fira Sans, "Droid Sans", "Helvetica Neue", arial, sans-serif;
   line-height: 1.5;
   color: #333;
   background-color: #f5f5f5;
@@ -185,6 +183,8 @@ template {
 
 a {
   background: transparent;
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
   text-decoration: none;
   color: #333;
 }
@@ -194,7 +194,17 @@ a:active {
 }
 
 abbr[title] {
-  border-bottom: 1px dotted;
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+b,
+strong {
+  font-weight: inherit;
 }
 
 b,
@@ -328,8 +338,18 @@ fieldset {
 }
 
 legend {
-  border: 0;
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
   padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 textarea {
@@ -1223,7 +1243,6 @@ i {
 
 .nav-list {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
@@ -1231,7 +1250,6 @@ i {
 
 .nav-list .nav-item {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -1343,11 +1361,9 @@ i {
 
 .line-list--flex .line-item {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   padding-right: 0;
@@ -1364,7 +1380,6 @@ i {
 .line-list--flex .line-item .item-tt,
 .line-list--flex .line-item .item-bd {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   margin-right: 10px;
@@ -1439,29 +1454,24 @@ i {
   top: 44px;
   bottom: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   z-index: 4000;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .toast-wrap.active {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1521,29 +1531,24 @@ i {
   top: 0;
   bottom: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   z-index: 4000;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
 
 .dialog-wrap.active {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -1578,14 +1583,12 @@ i {
   text-align: center;
   line-height: 44px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .dialog .dialog-ft .ft-btn {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -1647,7 +1650,6 @@ i {
 .dialog .dialog-ft.ft--full {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
 }
@@ -1684,11 +1686,9 @@ i {
   line-height: 36px;
   padding: 0 10px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
 }
@@ -1970,7 +1970,6 @@ i {
 
 .tool-bar {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1980,7 +1979,6 @@ i {
 
 .tool-bar li {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2047,15 +2045,12 @@ i {
   transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   transition: opacity 0.3s linear, transform 0.3s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
 }
@@ -2146,11 +2141,9 @@ i {
 
 .form-item {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   position: relative;
@@ -2179,7 +2172,6 @@ i {
 
 .form-item .item-field {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2346,14 +2338,12 @@ i {
 .picker-list {
   position: relative;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
 .picker-list .picker-item {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2366,7 +2356,6 @@ i {
 .panel--filter {
   top: 44px;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 176px;
@@ -2397,7 +2386,6 @@ i {
 
 .filter-nav:last-of-type {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2682,7 +2670,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .range-all {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   background: #fff;
@@ -2696,7 +2683,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .range-all .range-wrap {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2938,7 +2924,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .equal--gap {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding-left: 10px;
@@ -2947,7 +2932,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .equal--gap .line-equal-item {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -2959,11 +2943,9 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .equal--item {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
@@ -2978,7 +2960,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .stats-list {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   padding: 10px 0;
@@ -2986,7 +2967,6 @@ input[type=range]::-webkit-media-slider-thumb {
 
 .stats-list .stats-item {
   -webkit-box-flex: 1;
-  -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 1%;
@@ -3023,18 +3003,33 @@ input[type=range]::-webkit-media-slider-thumb {
   top: 0;
   bottom: 0;
   z-index: 4005;
+  overflow: hidden;
+}
+
+.view-img-list {
+  width: 400vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.view-img-list .view-img-item {
+  width: 100vw;
+  height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }

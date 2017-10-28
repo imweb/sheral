@@ -3,12 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
-	
 	<meta name="format-detection" content="telphone=no,email=no"/>
 	<link rel="stylesheet" href="css/global.css">
 	<title>img view</title>
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
 <header class="header">
@@ -32,12 +30,38 @@
 </main>
 
 <div class="overlay active"></div>
-<section class="full-screen-view">
-    <ul class="view-list">
-        <li class="view-item">
+<section class="full-screen-view view--img" id="scrollContainer">
+    <ul class="view-img-list" id="scrollList">
+        <li class="view-img-item">
             <img class="item-img" src="http://placehold.it/400" alt="">
+        </li>
+        <li class="view-img-item">
+            <img class="item-img" src="http://placehold.it/300x1000" alt="">
+        </li>
+        <li class="view-img-item">
+            <img class="item-img" src="http://placehold.it/600x400" alt="">
+        </li>
+        <li class="view-img-item">
+            <img class="item-img" src="http://placehold.it/200" alt="">
         </li>
     </ul>
 </section>
+<script src="js/transform.js"></script>
+<script src="js/alloy_touch.js"></script>
+<script src="js/script.js"></script>
+<script>
+    var scrollList = document.querySelector('#scrollList');
+	Transform(scrollList);
+	var alloyTouch = new AlloyTouch({
+		touch:"#scrollContainer",//反馈触摸的dom
+		vertical: false,
+		target: scrollList, //运动的对象
+		property: "translateX",  //被运动的属性
+		min: window.innerWidth * -3,
+		max: 0,
+		step: window.innerWidth,//用于校正到step的整数倍
+		bindSelf: false,
+	})
+</script>
 </body>
 </html>
